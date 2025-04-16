@@ -1,0 +1,26 @@
+
+CODE CONVENTION:
+	
+	1. Starting from underscore (_) is private thing.
+	2. ClassNames, SceneNames, ScriptNames, FolderNames follow PascalCase
+	3. All variables, objects use snake_case
+
+STRUCTURE:
+	
+	0. All dependencies are top-to-bottom. Lower nodes only provide methods
+	that are called by upper methods. There are no two-sided dependencides.
+	Lower modules are totally independent of upper modules.
+	For example:
+		Level has Players have Vehicle
+		Players also have UI
+		Level has UI
+	
+	1. AssetManager must register all Levels & Vehicles to appear in menus.
+
+
+NOTES:
+	
+	Level expects all players to be sent, laps to be told, ... etc all data
+	to be sent beforehand. It must only add_child() them at appropriate
+	locations.
+
