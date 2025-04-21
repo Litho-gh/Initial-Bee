@@ -4,64 +4,72 @@
 
 [node name="MainMenu" type="Control"]
 layout_mode = 3
-anchor_right = 0.817
-anchor_bottom = 0.699
-offset_right = -0.184021
-offset_bottom = 0.0479736
+anchor_right = 0.996
+anchor_bottom = 1.0
+offset_right = -0.39209
+offset_bottom = -2.0
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_4rbjt")
 
 [node name="start_game_button" type="Button" parent="."]
 layout_mode = 0
-offset_left = 397.0
-offset_top = 166.0
-offset_right = 493.0
-offset_bottom = 197.0
+offset_left = 529.0
+offset_top = 482.0
+offset_right = 625.0
+offset_bottom = 513.0
 theme_override_colors/font_color = Color(1, 0.866667, 0.215686, 1)
 text = "Start Game"
 
 [node name="laps" type="LineEdit" parent="."]
 layout_mode = 0
-offset_left = 412.0
-offset_top = 69.0
-offset_right = 480.563
-offset_bottom = 100.0
+offset_left = 527.0
+offset_top = 350.0
+offset_right = 596.0
+offset_bottom = 381.0
 text = "3"
 placeholder_text = "laps"
 
+[node name="laps label" type="Label" parent="."]
+layout_mode = 0
+offset_left = 540.0
+offset_top = 322.0
+offset_right = 581.0
+offset_bottom = 347.0
+text = "Laps"
+
 [node name="select_levels" type="Label" parent="."]
 layout_mode = 0
-offset_left = 539.0
-offset_top = 6.0
-offset_right = 633.0
-offset_bottom = 29.0
+offset_left = 764.0
+offset_top = 101.0
+offset_right = 940.0
+offset_bottom = 143.0
 theme_override_font_sizes/font_size = 30
 text = "Select levels"
 
 [node name="levels" type="ItemList" parent="."]
 layout_mode = 0
-offset_left = 531.0
-offset_top = 54.0
-offset_right = 906.0
-offset_bottom = 406.0
+offset_left = 712.0
+offset_top = 164.0
+offset_right = 1087.0
+offset_bottom = 516.0
 theme_override_font_sizes/font_size = 15
 
 [node name="select_vehicles" type="Label" parent="."]
 layout_mode = 0
-offset_left = 92.0
-offset_top = 17.0
-offset_right = 302.0
-offset_bottom = 59.0
+offset_left = 167.0
+offset_top = 119.0
+offset_right = 377.0
+offset_bottom = 161.0
 theme_override_font_sizes/font_size = 30
 text = "Select vehicles"
 
 [node name="vehicles" type="ItemList" parent="."]
 layout_mode = 0
-offset_left = 83.0
-offset_top = 58.0
-offset_right = 373.0
-offset_bottom = 432.0
+offset_left = 159.0
+offset_top = 177.0
+offset_right = 449.0
+offset_bottom = 551.0
 theme_override_font_sizes/font_size = 15
 
 [connection signal="pressed" from="start_game_button" to="." method="_on_start_game_button_pressed"]
