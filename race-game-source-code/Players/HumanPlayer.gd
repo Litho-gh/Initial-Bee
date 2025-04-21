@@ -54,12 +54,13 @@ func _physics_process(delta):
 
 
 func _input(event):
-	
+	# press "c" to give camera control to mouse, press it again to revert
 	if Input.is_action_just_pressed("camera"):
 		if Input.get_mouse_mode() == Input.MOUSE_MODE_CAPTURED:
 			Input.set_mouse_mode(Input.MOUSE_MODE_VISIBLE)
 		else:
 			Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
+		
 	
 	if event is InputEventMouseMotion and Input.get_mouse_mode() == Input.MOUSE_MODE_CAPTURED:
 		var mouse_delta = event.relative
