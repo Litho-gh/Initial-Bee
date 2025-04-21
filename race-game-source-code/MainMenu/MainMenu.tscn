@@ -45,7 +45,7 @@ offset_top = 101.0
 offset_right = 940.0
 offset_bottom = 143.0
 theme_override_font_sizes/font_size = 30
-text = "Select levels (test)"
+text = "Select levels "
 
 [node name="levels" type="ItemList" parent="."]
 layout_mode = 0

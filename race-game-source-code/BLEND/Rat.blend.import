@@ -3,13 +3,13 @@
 importer="scene"
 importer_version=1
 type="PackedScene"
-uid="uid://oonq80u4awau"
-path="res://.godot/imported/Wasp.blend-be518274da6d1fd87ef82ff9d485108c.scn"
+uid="uid://dweqbal5ckh1n"
+path="res://.godot/imported/Rat.blend-bed87ce77609d8710500300cbb1c2e56.scn"
 
 [deps]
 
-source_file="res://Levels/UI/BLEND/Wasp.blend"
-dest_files=["res://.godot/imported/Wasp.blend-be518274da6d1fd87ef82ff9d485108c.scn"]
+source_file="res://BLEND/Rat.blend"
+dest_files=["res://.godot/imported/Rat.blend-bed87ce77609d8710500300cbb1c2e56.scn"]
 
 [params]
 

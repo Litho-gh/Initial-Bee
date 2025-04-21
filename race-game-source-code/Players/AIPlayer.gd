@@ -20,6 +20,8 @@ func _ready():
 func _process(delta):
 	super(delta)
 
+func get_vehicle_name():
+	return "AI Car"
 
 func _physics_process(delta):
 	super(delta)

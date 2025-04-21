@@ -3,13 +3,13 @@
 importer="scene"
 importer_version=1
 type="PackedScene"
-uid="uid://by0uqs7o5plwe"
-path="res://.godot/imported/EaterPlant.blend-316fa0d895ce547098c85422945e46c6.scn"
+uid="uid://v8mwanf5stwv"
+path="res://.godot/imported/Bat.blend-c9051421d202a56245ff1131c3b179bd.scn"
 
 [deps]
 
-source_file="res://Levels/UI/BLEND/EaterPlant.blend"
-dest_files=["res://.godot/imported/EaterPlant.blend-316fa0d895ce547098c85422945e46c6.scn"]
+source_file="res://BLEND/Bat.blend"
+dest_files=["res://.godot/imported/Bat.blend-c9051421d202a56245ff1131c3b179bd.scn"]
 
 [params]
 

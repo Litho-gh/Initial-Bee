@@ -28,6 +28,7 @@ func _ready():
 func _fill_levels_and_vehicles():
 	if _level_list.item_count > 0: return # TO NOT REPEAR-WRITE EVERYTHING
 	for level in AssetManager.levels:
+		print(level)
 		_level_list.add_item(level)
 	
 	for vehicle in AssetManager.vehicles:

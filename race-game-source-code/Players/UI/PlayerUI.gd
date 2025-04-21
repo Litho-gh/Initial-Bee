@@ -1,6 +1,5 @@
 extends Control
 
-
 var label: Label
 
 func _ready():
