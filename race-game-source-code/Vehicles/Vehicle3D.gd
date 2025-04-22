@@ -7,6 +7,8 @@ class_name Vehicle3D
 @export var max_engine_force: float = 800 # max_engine_force
 @export var max_brake: float = 10 # max_engine_force
 
+var direction = Vector3.FORWARD
+
 
 func _ready():
 	self.add_to_group("vehicles")

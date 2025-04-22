@@ -55,7 +55,7 @@ func _physics_process(delta):
 
 func _input(event):
 	# press "c" to give camera control to mouse, press it again to revert
-	if Input.is_action_just_pressed("camera"):
+	if Input.is_action_just_pressed("ui_cancel"):
 		if Input.get_mouse_mode() == Input.MOUSE_MODE_CAPTURED:
 			Input.set_mouse_mode(Input.MOUSE_MODE_VISIBLE)
 		else:
@@ -68,7 +68,7 @@ func _input(event):
 		$origin/pivot.rotate_x(deg_to_rad(mouse_delta.y * 0.2))
 
 func get_vehicle_name():
-	return "cars"
+	return "Whatever ur driving idk (TBD)"
 
 
 func _process(delta):
