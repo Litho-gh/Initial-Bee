@@ -1,0 +1,14 @@
+[gd_scene load_steps=2 format=3 uid="uid://c4afhre202m6w"]
+
+[ext_resource type="Script" uid="uid://c3jxrsoe0o3gi" path="res://Players/HumanPlayer.gd" id="1_e3e1m"]
+
+[node name="HumanPlayer" type="Node"]
+script = ExtResource("1_e3e1m")
+
+[node name="origin" type="Node3D" parent="."]
+
+[node name="pivot" type="Node3D" parent="origin"]
+
+[node name="camera" type="Camera3D" parent="origin/pivot"]
+transform = Transform3D(-1, 5.65641e-08, -1.40001e-07, 0, 0.927184, 0.374607, 1.50996e-07, 0.374607, -0.927184, 0, 5, -6)
+current = true

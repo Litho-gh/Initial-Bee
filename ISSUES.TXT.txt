@@ -1,0 +1,46 @@
+1. NETWORK PLAYER VEHICLE NEEDS TO BE FINALIZED AT LOBBY SO IT DOES NOT GIVE
+EMPY NODE NAME ERROR IN LEVEL.
+
+IF ASSIGNMENT MUST BE IN LEVEL, THEN DO SET NAME TO BE THE NAME OF CEHICLE.
+
+BUT I RECOMMEND AGAINST IT. JUST LIKE HUMAN PLAYER IS FINALIZED IN LKOBBY,
+NETWORK PLAYER MUST TOO, SNE DHIS WHOLE DATA IN LOBBY OR IN NETWORK-PLAYER SCRIPT.
+
+E 0:00:40:0902   network_player.gd:12 @ update_variables(): Condition "name.is_empty()" is true.
+  <C++ Source>   scene/main/node.cpp:1159 @ set_name()
+  <Stack Trace>  network_player.gd:12 @ update_variables()
+				 network_player.gd:7 @ _process()
+
+
+
+THE ABOVE ISSUE IS SOLVED CHEAPLY BY ASSIGNING TO DATA IN player.gd script
+
+
+# # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # #
+# # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # #
+# # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # #
+# # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # #
+
+
+
+2. MAKE LOBBY EFFICIENTLY AS DATA DOES NOT FLOW TO SERVER IN LOBBY
+
+INSTEAD, IT IS JUST BEING PULLED FROM SERVER USING GET REQUEST.
+
+SO MAKE A MECHIANISM TO PUSH ROOM DATA TO SERVER WHENEVER EVENT OCCURS
+
+JUST LIKE ADDING PLAYER OR STARTING GAME EVENTS PUSH DATA TO SERVER.
+
+
+
+# # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # #
+# # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # #
+# # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # #
+# # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # #
+
+3. LAPS ARE DEFAULT 3 AND NEVER CHANGE TO MORE NUMBERS -- 
+FOR THIS, CREATE A SEPARATE ENDPOINT "/updatelaps/[pin]" when laps are seleceted...
+
+for leave it for now as 3 laps are enugh
+
+for now, disabling laps changing..
