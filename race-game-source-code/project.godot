@@ -29,6 +29,10 @@ window/stretch/scale=1.5
 
 enabled=PackedStringArray("res://addons/phantom_camera/plugin.cfg")
 
+[filesystem]
+
+import/blender/enabled=false
+
 [input]
 
 right={

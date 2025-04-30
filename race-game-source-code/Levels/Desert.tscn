@@ -1,6 +1,11 @@
-[gd_scene load_steps=19 format=3 uid="uid://5qn5giqfmi5y"]
+[gd_scene load_steps=24 format=3 uid="uid://5qn5giqfmi5y"]
 
 [ext_resource type="Script" uid="uid://dcqlx25iavu1b" path="res://Levels/Level.gd" id="1_tajqo"]
+[ext_resource type="Script" uid="uid://bdadjae08bnj" path="res://Levels/obstacle_spawner.gd" id="2_m53e1"]
+[ext_resource type="PackedScene" uid="uid://dyy8vv83dvsel" path="res://avery_resources/obstacles used/flower.tscn" id="3_ivr5u"]
+[ext_resource type="PackedScene" uid="uid://cdawxgwhsllqm" path="res://avery_resources/obstacles used/log.tscn" id="4_2ne6n"]
+[ext_resource type="PackedScene" uid="uid://c8i5cj6jexpt" path="res://avery_resources/obstacles used/roadrock.tscn" id="5_3cj36"]
+[ext_resource type="PackedScene" uid="uid://c1gy81h7f0nr7" path="res://avery_resources/obstacles used/tree.tscn" id="6_irpm5"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_703oi"]
 
@@ -169,3 +174,8 @@ mesh = SubResource("PrismMesh_yd3rl")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="test/StaticBody3D"]
 shape = SubResource("ConcavePolygonShape3D_n44lg")
+
+[node name="ObstacleSpawner" type="Node3D" parent="."]
+script = ExtResource("2_m53e1")
+obstacle_scenes = Array[PackedScene]([ExtResource("3_ivr5u"), ExtResource("4_2ne6n"), ExtResource("5_3cj36"), ExtResource("6_irpm5")])
+path_node = NodePath("../track")

@@ -1,0 +1,14 @@
+[gd_scene load_steps=3 format=3 uid="uid://cdawxgwhsllqm"]
+
+[ext_resource type="PackedScene" uid="uid://4d1p7m6qtblm" path="res://averys resource files/Logs/log_2a.fbx" id="1_1tqeg"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_x2c16"]
+size = Vector3(0.339539, 0.128174, 0.539917)
+
+[node name="log_2a" instance=ExtResource("1_1tqeg")]
+
+[node name="StaticBody3D" type="StaticBody3D" parent="." index="0"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D" index="0"]
+transform = Transform3D(5, 0, 0, 0, 5, 0, 0, 0, 5, 0.344255, 0.172757, -0.0826828)
+shape = SubResource("BoxShape3D_x2c16")
