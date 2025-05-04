@@ -20,6 +20,10 @@ config/icon="res://icon.svg"
 AssetManager="*res://Globals/AssetManager.tscn"
 SceneManager="*res://Globals/SceneManager.tscn"
 
+[display]
+
+window/stretch/scale=1.5
+
 [input]
 
 right={
