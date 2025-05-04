@@ -1,14 +1,14 @@
 [gd_scene load_steps=3 format=3 uid="uid://c8i5cj6jexpt"]
 
-[ext_resource type="PackedScene" uid="uid://b4ube4y06w6dd" path="res://averys resource files/Rocks/roadrock_1a.fbx" id="1_7chek"]
+[ext_resource type="PackedScene" uid="uid://b4ube4y06w6dd" path="res://avery_resources/Rocks/roadrock_1a.fbx" id="1_7chek"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_66c0l"]
-size = Vector3(0.371613, 0.0898438, 0.249512)
+size = Vector3(0.371613, 0.0697022, 0.363892)
 
 [node name="roadrock_1a" instance=ExtResource("1_7chek")]
 
 [node name="StaticBody3D" type="StaticBody3D" parent="." index="0"]
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D" index="0"]
-transform = Transform3D(5, 0, 0, 0, 5, 0, 0, 0, 5, 0.0838386, 0.0807576, -0.278418)
+transform = Transform3D(5, 0, 0, 0, 5, 0, 0, 0, 5, 0.0838386, 0.0304035, 0.00753134)
 shape = SubResource("BoxShape3D_66c0l")
