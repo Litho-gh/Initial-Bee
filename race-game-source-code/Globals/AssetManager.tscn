@@ -2,9 +2,9 @@
 
 [ext_resource type="Script" uid="uid://t6p5rxlogyb" path="res://Globals/AssetManager.gd" id="1_o4m36"]
 [ext_resource type="PackedScene" uid="uid://5qn5giqfmi5y" path="res://Levels/Desert.tscn" id="3_jnd4s"]
-[ext_resource type="PackedScene" uid="uid://by7hfw35tmwbi" path="res://Levels/City.tscn" id="3_ltnei"]
-[ext_resource type="PackedScene" uid="uid://iib0iqd8ldfk" path="res://Vehicles/Jeep.tscn" id="4_b28l1"]
-[ext_resource type="PackedScene" uid="uid://csahn0q5h4agw" path="res://Vehicles/Convertible.tscn" id="5_di8e3"]
+[ext_resource type="PackedScene" uid="uid://b6cnm2bicufvy" path="res://Levels/City.tscn" id="3_ltnei"]
+[ext_resource type="PackedScene" uid="uid://iib0iqd8ldfk" path="res://Vehicles/Ant.tscn" id="4_b28l1"]
+[ext_resource type="PackedScene" uid="uid://csahn0q5h4agw" path="res://Vehicles/Bee.tscn" id="5_di8e3"]
 
 [node name="AssetManager" type="Node"]
 script = ExtResource("1_o4m36")

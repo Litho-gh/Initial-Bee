@@ -1,6 +1,7 @@
-[gd_scene load_steps=23 format=3 uid="uid://5qn5giqfmi5y"]
+[gd_scene load_steps=24 format=3 uid="uid://5qn5giqfmi5y"]
 
 [ext_resource type="Script" uid="uid://dcqlx25iavu1b" path="res://Levels/Level.gd" id="1_tajqo"]
+[ext_resource type="Texture2D" uid="uid://bjsvor0itm6u3" path="res://Levels/asphalt_02_4k.blend/sand_texture.jpg" id="2_ivr5u"]
 [ext_resource type="Script" uid="uid://bdadjae08bnj" path="res://Levels/obstacle_spawner.gd" id="2_m53e1"]
 [ext_resource type="PackedScene" uid="uid://cdawxgwhsllqm" path="res://avery_resources/obstacles used/log.tscn" id="4_2ne6n"]
 [ext_resource type="PackedScene" uid="uid://c8i5cj6jexpt" path="res://avery_resources/obstacles used/roadrock.tscn" id="5_3cj36"]
@@ -16,7 +17,8 @@ background_mode = 2
 sky = SubResource("Sky_mcyyx")
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_du06y"]
-albedo_color = Color(0.807843, 0.490196, 0.298039, 1)
+albedo_color = Color(0.946498, 0.733735, 0.614153, 1)
+albedo_texture = ExtResource("2_ivr5u")
 
 [sub_resource type="BoxMesh" id="BoxMesh_5uh7x"]
 material = SubResource("StandardMaterial3D_du06y")
@@ -89,6 +91,7 @@ shape = SubResource("ConvexPolygonShape3D_0d1e0")
 
 [node name="MeshInstance3D2" type="MeshInstance3D" parent="StaticBody3D"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.83905, -0.95459, 0)
+visible = false
 mesh = SubResource("CapsuleMesh_hr8f3")
 
 [node name="StaticBody3D" type="StaticBody3D" parent="StaticBody3D/MeshInstance3D2"]
@@ -167,6 +170,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -21.4523, 0, 31.7316)
 
 [node name="test" type="MeshInstance3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1.80945, 0)
+visible = false
 mesh = SubResource("PrismMesh_yd3rl")
 
 [node name="StaticBody3D" type="StaticBody3D" parent="test"]

@@ -1,0 +1,25 @@
+[remap]
+
+importer="wavefront_obj"
+importer_version=1
+type="Mesh"
+uid="uid://fiai00h0t4py"
+path="res://.godot/imported/culona ant.obj-460a4ad21cdc9425d103e0e3484eb48d.mesh"
+
+[deps]
+
+files=["res://.godot/imported/culona ant.obj-460a4ad21cdc9425d103e0e3484eb48d.mesh"]
+
+source_file="res://Initial bee models/Initial bee models/3DLowPoly-Horned_ant/OBJ/culona ant.obj"
+dest_files=["res://.godot/imported/culona ant.obj-460a4ad21cdc9425d103e0e3484eb48d.mesh", "res://.godot/imported/culona ant.obj-460a4ad21cdc9425d103e0e3484eb48d.mesh"]
+
+[params]
+
+generate_tangents=true
+generate_lods=true
+generate_shadow_mesh=true
+generate_lightmap_uv2=false
+generate_lightmap_uv2_texel_size=0.2
+scale_mesh=Vector3(1, 1, 1)
+offset_mesh=Vector3(0, 0, 0)
+force_disable_mesh_compression=false
