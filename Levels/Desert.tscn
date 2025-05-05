@@ -1,6 +1,7 @@
-[gd_scene load_steps=19 format=3 uid="uid://5qn5giqfmi5y"]
+[gd_scene load_steps=20 format=3 uid="uid://5qn5giqfmi5y"]
 
 [ext_resource type="Script" uid="uid://dcqlx25iavu1b" path="res://Levels/Level.gd" id="1_tajqo"]
+[ext_resource type="Texture2D" uid="uid://blpivun3q78jx" path="res://Levels/asphalt_02_4k.blend/textures/asphalt_02_diff_4k.jpg" id="2_m53e1"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_703oi"]
 
@@ -44,6 +45,7 @@ point_count = 16
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_l4kqw"]
 albedo_color = Color(0.129412, 0.0980392, 0.027451, 1)
+albedo_texture = ExtResource("2_m53e1")
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_iwfsq"]
 size = Vector3(44.1823, 20, 20)

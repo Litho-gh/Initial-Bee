@@ -1,6 +1,7 @@
-[gd_scene load_steps=23 format=3 uid="uid://5qn5giqfmi5y"]
+[gd_scene load_steps=24 format=3 uid="uid://5qn5giqfmi5y"]
 
 [ext_resource type="Script" uid="uid://dcqlx25iavu1b" path="res://Levels/Level.gd" id="1_tajqo"]
+[ext_resource type="Texture2D" uid="uid://blpivun3q78jx" path="res://Levels/asphalt_02_4k.blend/textures/asphalt_02_diff_4k.jpg" id="2_ivr5u"]
 [ext_resource type="Script" uid="uid://bdadjae08bnj" path="res://Levels/obstacle_spawner.gd" id="2_m53e1"]
 [ext_resource type="PackedScene" uid="uid://cdawxgwhsllqm" path="res://avery_resources/obstacles used/log.tscn" id="4_2ne6n"]
 [ext_resource type="PackedScene" uid="uid://c8i5cj6jexpt" path="res://avery_resources/obstacles used/roadrock.tscn" id="5_3cj36"]
@@ -48,6 +49,7 @@ point_count = 16
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_l4kqw"]
 albedo_color = Color(0.129412, 0.0980392, 0.027451, 1)
+albedo_texture = ExtResource("2_ivr5u")
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_iwfsq"]
 size = Vector3(44.1823, 20, 20)
@@ -62,8 +64,8 @@ data = PackedVector3Array(0, 0.6475, 3.065, 1.9625, -0.6475, 3.065, -1.9625, -0.
 
 [node name="Desert" type="Node3D" node_paths=PackedStringArray("track", "checkpoint")]
 script = ExtResource("1_tajqo")
-track = NodePath("track")
-checkpoint = NodePath("track/checkpoint")
+track = NodePath("path")
+checkpoint = NodePath("path/checkpoint")
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
 environment = SubResource("Environment_c6316")
@@ -105,11 +107,11 @@ mesh = SubResource("PrismMesh_lwa2o")
 [node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D/MeshInstance3D3/StaticBody3D"]
 shape = SubResource("ConcavePolygonShape3D_vyqv2")
 
-[node name="track" type="Path3D" parent="."]
+[node name="path" type="Path3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1.8, 0)
 curve = SubResource("Curve3D_c2onb")
 
-[node name="CSGPolygon3D" type="CSGPolygon3D" parent="track"]
+[node name="CSGPolygon3D" type="CSGPolygon3D" parent="path"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -2.425, 0)
 material_override = SubResource("StandardMaterial3D_l4kqw")
 use_collision = true
@@ -126,15 +128,15 @@ path_continuous_u = true
 path_u_distance = 0.0
 path_joined = true
 
-[node name="checkpoint" type="Area3D" parent="track"]
+[node name="checkpoint" type="Area3D" parent="path"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -29.5115, -1.7975, 81.5628)
 collision_mask = 65535
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="track/checkpoint"]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="path/checkpoint"]
 transform = Transform3D(0.717567, 0, -0.696489, 0, 1, 0, 0.696489, 0, 0.717567, -1.0022, -0.590285, 1.30079)
 shape = SubResource("BoxShape3D_iwfsq")
 
-[node name="MeshInstance3D" type="MeshInstance3D" parent="track/checkpoint"]
+[node name="MeshInstance3D" type="MeshInstance3D" parent="path/checkpoint"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -2.12397, 0)
 mesh = SubResource("PlaneMesh_imkwp")
 
@@ -177,6 +179,6 @@ shape = SubResource("ConcavePolygonShape3D_n44lg")
 [node name="ObstacleSpawner" type="Node3D" parent="."]
 script = ExtResource("2_m53e1")
 obstacle_scenes = Array[PackedScene]([ExtResource("4_2ne6n"), ExtResource("5_3cj36")])
-path_node = NodePath("../track")
+path_node = NodePath("../path")
 
 [node name="PauseMenu" parent="." instance=ExtResource("7_2ne6n")]

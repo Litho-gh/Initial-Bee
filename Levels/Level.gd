@@ -16,6 +16,7 @@ var is_race_started: bool = false
 
 
 var level_ui: Control
+var pause_menu: Control
 
 
 # Constructor
@@ -35,6 +36,24 @@ func _ready():
 	level_ui = SceneManager.load_scene("res://Levels/UI/LevelUI.tscn")
 	add_child(level_ui)
 
+# Add pause menu
+	pause_menu = load("res://PauseMenu.tscn").instantiate()
+	add_child(pause_menu)
+	pause_menu.visible = false
+	
+func _input(event):
+	if event.is_action_pressed("pause") and is_race_started:
+		toggle_pause()
+	
+func toggle_pause():
+	var paused := not get_tree().paused
+	get_tree().paused = paused
+	pause_menu.visible = paused
+	
+	if paused:
+		Input.set_mouse_mode(Input.MOUSE_MODE_VISIBLE)
+	else:
+		Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
 
 func spawn_players():
 	var index: int = 0

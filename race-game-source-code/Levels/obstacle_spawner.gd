@@ -12,7 +12,6 @@ var path: Path3D
 
 func _ready():
 	randomize()
-
 	path = get_node(path_node)
 
 	for i in range(count):

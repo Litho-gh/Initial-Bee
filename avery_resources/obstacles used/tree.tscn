@@ -1,0 +1,14 @@
+[gd_scene load_steps=3 format=3 uid="uid://c1gy81h7f0nr7"]
+
+[ext_resource type="PackedScene" uid="uid://bh21bya0f5k86" path="res://avery_resources/Trees/tree_3a.fbx" id="1_h7ufb"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_1ep2p"]
+size = Vector3(0.285865, 1.11514, 0.332519)
+
+[node name="tree_3a" instance=ExtResource("1_h7ufb")]
+
+[node name="StaticBody3D" type="StaticBody3D" parent="." index="0"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D" index="0"]
+transform = Transform3D(5, 0, 0, 0, 5, 0, 0, 0, 5, 0.0296172, 2.4448, 0)
+shape = SubResource("BoxShape3D_1ep2p")
