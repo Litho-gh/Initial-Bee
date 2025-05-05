@@ -1,9 +1,11 @@
-[gd_scene load_steps=22 format=3 uid="uid://by7hfw35tmwbi"]
+[gd_scene load_steps=24 format=3 uid="uid://b6cnm2bicufvy"]
 
 [ext_resource type="Script" uid="uid://dcqlx25iavu1b" path="res://Levels/Level.gd" id="1_7xgnh"]
 [ext_resource type="Texture2D" uid="uid://blpivun3q78jx" path="res://Levels/asphalt_02_4k.blend/textures/asphalt_02_diff_4k.jpg" id="2_ri8g7"]
 [ext_resource type="Texture2D" uid="uid://bp853bjbn6yv1" path="res://Levels/asphalt_02_4k.blend/textures/0482addebebc9db1cedc2a4cb35a9d15.webp" id="3_r6we3"]
 [ext_resource type="Script" uid="uid://bdadjae08bnj" path="res://Levels/obstacle_spawner.gd" id="4_ddnc3"]
+[ext_resource type="PackedScene" uid="uid://cdawxgwhsllqm" path="res://avery_resources/obstacles used/log.tscn" id="4_yo2ij"]
+[ext_resource type="PackedScene" uid="uid://c8i5cj6jexpt" path="res://avery_resources/obstacles used/roadrock.tscn" id="5_3a0k0"]
 
 [sub_resource type="Shader" id="Shader_r6we3"]
 code = "// NOTE: Shader automatically converted from Godot Engine 4.4.stable's StandardMaterial3D.
@@ -265,6 +267,10 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -21.4523, 0, 31.7316)
 
 [node name="ObstacleSpawner" type="Node3D" parent="."]
 script = ExtResource("4_ddnc3")
+obstacle_scenes = Array[PackedScene]([ExtResource("4_yo2ij"), ExtResource("5_3a0k0")])
+count = 200
+path_node = NodePath("../Path")
+y_level = 4.5
 
 [node name="Path" type="Path3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 4.61687, 0)

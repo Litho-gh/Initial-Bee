@@ -2,10 +2,11 @@ extends Node3D
 
 @export var obstacle_scenes: Array[PackedScene] = []
 @export var count: int = 150
-@export var min_distance: float = 2.0
-@export var lateral_jitter_x: float = 10.0  # X-axis scatter
-@export var lateral_jitter_z: float = 5.0   # Z-axis scatter
+@export var min_distance: float = 5.0
+@export var lateral_jitter_x: float = 10.0
+@export var lateral_jitter_z: float = 5.0
 @export var path_node: NodePath
+@export var y_level: float = 0.0  # Adjustable height per map
 
 var positions := []
 var path: Path3D
@@ -25,12 +26,12 @@ func get_valid_position() -> Vector3:
 		var distance = randf_range(0, path.curve.get_baked_length())
 		var pos = path.curve.sample_baked(distance)
 
-		# 🛠 Random sideways jitter without tangent
+		# Apply jitter (X and Z)
 		pos.x += randf_range(-lateral_jitter_x, lateral_jitter_x)
 		pos.z += randf_range(-lateral_jitter_z, lateral_jitter_z)
 
-		# Lower Y to match track
-		pos.y -= 6.0
+		# Set Y-level based on export value
+		pos.y = y_level
 
 		var valid = true
 		for existing in positions:
@@ -54,7 +55,6 @@ func spawn_obstacle(position: Vector3):
 
 	var instance = scene.instantiate()
 	instance.global_position = position
-
 	instance.rotation.y = randf_range(0, TAU)
 
 	var random_scale = randf_range(1.2, 2.0)
