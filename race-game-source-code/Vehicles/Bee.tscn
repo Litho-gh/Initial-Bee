@@ -174,8 +174,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.00706524, 0.732444, -0.087
 shape = SubResource("BoxShape3D_a7hrl")
 
 [node name="front_right_tire" type="VehicleWheel3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.855649, 0.428255, 0.457371)
-visible = false
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.855649, 0.428255, 0.841184)
 use_as_steering = true
 wheel_radius = 0.41
 suspension_stiffness = 70.0
@@ -185,12 +184,12 @@ damping_relaxation = 2.0
 
 [node name="front_right_tire" type="MeshInstance3D" parent="front_right_tire"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0520035, 0.00263581, -0.00917041)
+visible = false
 mesh = SubResource("ArrayMesh_0h60b")
 skeleton = NodePath("")
 
 [node name="front_left_tire" type="VehicleWheel3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.856, 0.428, 0.464871)
-visible = false
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.856, 0.428, 0.806559)
 use_as_steering = true
 wheel_radius = 0.41
 suspension_stiffness = 70.0
@@ -200,12 +199,12 @@ damping_relaxation = 2.0
 
 [node name="front_left_tire" type="MeshInstance3D" parent="front_left_tire"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0526687, 0.0028908, -0.00871396)
+visible = false
 mesh = SubResource("ArrayMesh_i5sbp")
 skeleton = NodePath("")
 
 [node name="back_right_tire" type="VehicleWheel3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.855649, 0.428255, -1.03508)
-visible = false
 use_as_traction = true
 wheel_radius = 0.41
 suspension_stiffness = 70.0
@@ -215,12 +214,12 @@ damping_relaxation = 2.0
 
 [node name="back_right_tire" type="MeshInstance3D" parent="back_right_tire"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.052318, 0.00263619, -0.00742352)
+visible = false
 mesh = SubResource("ArrayMesh_fwort")
 skeleton = NodePath("")
 
 [node name="back_left_tire" type="VehicleWheel3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.856, 0.428, -1.02484)
-visible = false
 use_as_traction = true
 wheel_radius = 0.41
 suspension_stiffness = 70.0
@@ -230,5 +229,6 @@ damping_relaxation = 2.0
 
 [node name="back_left_tire" type="MeshInstance3D" parent="back_left_tire"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0526687, 0.00289118, -0.00696707)
+visible = false
 mesh = SubResource("ArrayMesh_btsdm")
 skeleton = NodePath("")

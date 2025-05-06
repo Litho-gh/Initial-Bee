@@ -1,6 +1,7 @@
-[gd_scene load_steps=2 format=3 uid="uid://ci0uvvapcks2v"]
+[gd_scene load_steps=3 format=3 uid="uid://ci0uvvapcks2v"]
 
 [ext_resource type="Script" uid="uid://ctthe762go82x" path="res://pause_menu.gd" id="1_nov15"]
+[ext_resource type="Texture2D" uid="uid://dq4orneo0wsw4" path="res://Art/bee racing.png" id="2_etnfi"]
 
 [node name="PauseMenu" type="Control"]
 process_mode = 2
@@ -19,7 +20,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-color = Color(0.396889, 0.396889, 0.396889, 1)
+color = Color(0.396078, 0.396078, 0.396078, 0.372549)
 
 [node name="VBoxContainer" type="VBoxContainer" parent="."]
 layout_mode = 1
@@ -40,12 +41,24 @@ layout_mode = 2
 text = "Resume"
 
 [node name="RestartButton" type="Button" parent="VBoxContainer"]
+visible = false
 layout_mode = 2
 text = "Restart"
 
 [node name="QuitButton" type="Button" parent="VBoxContainer"]
 layout_mode = 2
 text = "Quit"
+
+[node name="TextureRect" type="TextureRect" parent="."]
+z_index = -1
+layout_mode = 0
+offset_left = 957.0
+offset_top = 484.0
+offset_right = 1160.0
+offset_bottom = 646.0
+texture = ExtResource("2_etnfi")
+expand_mode = 1
+stretch_mode = 4
 
 [connection signal="pressed" from="VBoxContainer/ResumeButton" to="." method="_on_resume_button_pressed"]
 [connection signal="pressed" from="VBoxContainer/RestartButton" to="." method="_on_restart_button_pressed"]

@@ -7,12 +7,14 @@ var _vehicle_list: ItemList
 var _laps: LineEdit
 
 
-
 var _selected_level_resource_path: String
 var _selected_vehicle_resource_path: String
 var _number_laps: int = 3
 
 var _players: Array[Player] = []
+
+var bg_music := AudioStreamPlayer.new()
+
 
 
 func _ready():
@@ -21,6 +23,11 @@ func _ready():
 	_laps = $laps
 	
 	_fill_levels_and_vehicles()
+	bg_music.stream = load("res://Sounds/InitialBee.wav")
+	bg_music.autoplay = true
+	bg_music.volume_db = -20
+	add_child(bg_music) 
+
 
 
 
@@ -73,3 +80,4 @@ func _on_start_game_button_pressed():
 			_players, _number_laps
 		)
 	)
+	

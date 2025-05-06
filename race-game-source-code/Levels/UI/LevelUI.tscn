@@ -12,10 +12,14 @@ grow_vertical = 2
 script = ExtResource("1_0uiro")
 
 [node name="Label" type="Label" parent="."]
-layout_mode = 0
-offset_left = 562.0
-offset_top = 51.0
-offset_right = 602.0
-offset_bottom = 74.0
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -4.0
+offset_top = 21.0
+offset_right = 20.0
+offset_bottom = 44.0
+grow_horizontal = 2
 theme_override_colors/font_color = Color(0, 0.862745, 0, 1)
 text = "3"

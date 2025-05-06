@@ -1,7 +1,13 @@
 extends Control
 
+var bg_music := AudioStreamPlayer.new()
+
 func _ready():
 	visible = false
+	bg_music.stream = load("res://Sounds/Pause_music.wav")
+	bg_music.autoplay = true
+	bg_music.volume_db = -20
+	add_child(bg_music)
 	$VBoxContainer/ResumeButton.text = "Resume"
 	$VBoxContainer/QuitButton.text = "Quit"
 	$VBoxContainer/RestartButton.text = "Restart"

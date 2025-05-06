@@ -14,6 +14,8 @@ var is_race_started: bool = false
 var level_ui: Control
 var pause_menu: Control
 
+var bg_music := AudioStreamPlayer.new()
+
 # Constructor
 func with_data(players: Array[Player], number_laps: int):
 	self._players = players
@@ -24,6 +26,10 @@ func _ready():
 	# Always unpause and lock mouse when level starts
 	get_tree().paused = false
 	Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
+	bg_music.stream = load("res://Sounds/city_track.wav")
+	bg_music.autoplay = true
+	bg_music.volume_db = -20
+	add_child(bg_music)
 
 	# Setup checkpoint listener
 	checkpoint.body_entered.connect(_on_checkpoint_body_entered)
@@ -43,7 +49,7 @@ func _ready():
 	pause_menu.visible = false
 
 func _input(event):
-	if event.is_action_pressed("ui_cancel") and is_race_started:
+	if event.is_action_pressed("pause") and is_race_started:
 		toggle_pause()
 
 func toggle_pause():

@@ -68,7 +68,7 @@ func _input(event):
 		$origin/pivot.rotate_x(deg_to_rad(mouse_delta.y * 0.2))
 
 func get_vehicle_name():
-	return "Whatever ur driving idk (TBD)"
+	return "Hymenopteracer"
 
 
 func _process(delta):

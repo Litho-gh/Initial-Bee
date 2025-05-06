@@ -1,8 +1,10 @@
-[gd_scene load_steps=2 format=3 uid="uid://cr4he8ioyyqcm"]
+[gd_scene load_steps=3 format=3 uid="uid://cr4he8ioyyqcm"]
 
 [ext_resource type="Script" uid="uid://cj2c853krmetf" path="res://MainMenu/MainMenu.gd" id="1_4rbjt"]
+[ext_resource type="Texture2D" uid="uid://x3d2tcwc0t85" path="res://Art/InitialBee Title Screen.png" id="2_b76km"]
 
 [node name="MainMenu" type="Control"]
+z_index = 1
 layout_mode = 3
 anchor_right = 0.996
 anchor_bottom = 1.0
@@ -13,64 +15,81 @@ grow_vertical = 2
 script = ExtResource("1_4rbjt")
 
 [node name="start_game_button" type="Button" parent="."]
+z_index = 5
 layout_mode = 0
-offset_left = 529.0
-offset_top = 482.0
-offset_right = 625.0
-offset_bottom = 513.0
+offset_left = 540.0
+offset_top = 589.0
+offset_right = 636.0
+offset_bottom = 620.0
 theme_override_colors/font_color = Color(1, 0.866667, 0.215686, 1)
 text = "Start Game"
 
 [node name="laps" type="LineEdit" parent="."]
 layout_mode = 0
-offset_left = 527.0
-offset_top = 350.0
-offset_right = 596.0
-offset_bottom = 381.0
+offset_left = 552.0
+offset_top = 519.0
+offset_right = 621.0
+offset_bottom = 550.0
 text = "3"
 placeholder_text = "laps"
 
 [node name="laps label" type="Label" parent="."]
 layout_mode = 0
-offset_left = 540.0
-offset_top = 322.0
-offset_right = 581.0
-offset_bottom = 347.0
+offset_left = 566.0
+offset_top = 475.0
+offset_right = 607.0
+offset_bottom = 500.0
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
 text = "Laps"
 
 [node name="select_levels" type="Label" parent="."]
 layout_mode = 0
-offset_left = 764.0
-offset_top = 101.0
-offset_right = 940.0
-offset_bottom = 143.0
+offset_left = 785.0
+offset_top = 464.0
+offset_right = 961.0
+offset_bottom = 506.0
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
 theme_override_font_sizes/font_size = 30
-text = "Select levels "
+text = "Select level"
 
 [node name="levels" type="ItemList" parent="."]
+z_index = 1
 layout_mode = 0
-offset_left = 712.0
-offset_top = 164.0
-offset_right = 1087.0
-offset_bottom = 516.0
+offset_left = 713.0
+offset_top = 519.0
+offset_right = 1042.0
+offset_bottom = 615.0
 theme_override_font_sizes/font_size = 15
 
-[node name="select_vehicles" type="Label" parent="."]
+[node name="select_bugs" type="Label" parent="."]
+z_index = 1
+z_as_relative = false
 layout_mode = 0
-offset_left = 167.0
-offset_top = 119.0
-offset_right = 377.0
-offset_bottom = 161.0
+offset_left = 207.0
+offset_top = 459.0
+offset_right = 387.0
+offset_bottom = 501.0
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
 theme_override_font_sizes/font_size = 30
-text = "Select vehicles"
+text = "Choose Bug"
 
 [node name="vehicles" type="ItemList" parent="."]
+z_index = 1
 layout_mode = 0
-offset_left = 159.0
-offset_top = 177.0
-offset_right = 449.0
-offset_bottom = 551.0
+offset_left = 166.0
+offset_top = 522.0
+offset_right = 456.0
+offset_bottom = 620.0
 theme_override_font_sizes/font_size = 15
+
+[node name="Title" type="TextureRect" parent="."]
+layout_mode = 0
+offset_left = 210.0
+offset_top = 105.0
+offset_right = 1147.0
+offset_bottom = 475.0
+texture = ExtResource("2_b76km")
+stretch_mode = 4
 
 [connection signal="pressed" from="start_game_button" to="." method="_on_start_game_button_pressed"]
 [connection signal="item_selected" from="levels" to="." method="_on_levels_item_selected"]
