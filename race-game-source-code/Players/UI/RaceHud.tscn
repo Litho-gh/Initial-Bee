@@ -1,0 +1,50 @@
+[gd_scene load_steps=5 format=3 uid="uid://batp28a141v3b"]
+
+[ext_resource type="Script" uid="uid://c7b6b48krx66m" path="res://Players/UI/RaceHud.gd" id="1_x4lkb"]
+[ext_resource type="Texture2D" uid="uid://ndf5hulmktky" path="res://Art/SpeedometerGodot(180 opacity).png" id="3_lxujg"]
+[ext_resource type="Texture2D" uid="uid://oim2essts2ko" path="res://Players/UI/SpeedometerHandd.jpg" id="4_lcqxm"]
+
+[sub_resource type="GDScript" id="GDScript_lxujg"]
+
+[node name="RaceHud" type="Control" node_paths=PackedStringArray("needle")]
+layout_mode = 3
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -576.0
+offset_top = -324.0
+offset_right = 576.0
+offset_bottom = 324.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_x4lkb")
+needle = NodePath("Node2D/hand")
+
+[node name="Lap" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = -0.044
+anchor_top = -0.043
+anchor_right = -0.044
+anchor_bottom = -0.043
+offset_left = -0.311996
+offset_top = 0.863998
+offset_right = 66.688
+offset_bottom = 23.864
+
+[node name="Node2D" type="Node2D" parent="."]
+script = SubResource("GDScript_lxujg")
+
+[node name="hand" type="Sprite2D" parent="Node2D"]
+position = Vector2(1094, 620)
+rotation = 1.13446
+scale = Vector2(0.000829704, 0.0617258)
+texture = ExtResource("4_lcqxm")
+centered = false
+
+[node name="Speedometer" type="Sprite2D" parent="Node2D"]
+position = Vector2(1099, 610)
+scale = Vector2(0.306011, 0.279737)
+texture = ExtResource("3_lxujg")

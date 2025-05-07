@@ -59,7 +59,7 @@ func _on_start_game_button_pressed():
 	var _number_laps = int(_laps.text)
 	
 	var _tmp_human_player = SceneManager.load_scene("res://Players/HumanPlayer.tscn").with_data(
-		SceneManager.load_scene(_selected_vehicle_resource_path)
+		SceneManager.load_scene(_selected_vehicle_resource_path), _number_laps
 	)
 	_tmp_human_player.vehicle.collision_layer = pow(2, 2 - 1)
 	_players.append(_tmp_human_player)
@@ -67,13 +67,15 @@ func _on_start_game_button_pressed():
 	# TMP TEST CREATE AI PLAYERS ###############################################
 	for i in range(4):
 		var ai_player = SceneManager.load_scene("res://Players/AIPlayer.tscn").with_data(
-				SceneManager.load_scene(AssetManager.vehicles[AssetManager.vehicles.keys().pick_random()])
+				SceneManager.load_scene(AssetManager.vehicles[AssetManager.vehicles.keys().pick_random()]), _number_laps
 			)
 		ai_player.vehicle.collision_layer = pow(2, (i+3) - 1)
 		_players.append(
 			ai_player
 		)
 	##########################################################
+	#var new_level = SceneManager.load_scene("res://Levels/Desert.tscn")
+	#SceneManager.switch_scene(new_level)
 	
 	SceneManager.switch_scene(
 		SceneManager.load_scene(_selected_level_resource_path).with_data(

@@ -1,0 +1,628 @@
+[gd_scene load_steps=26 format=3 uid="uid://chqxp57om5m7n"]
+
+[ext_resource type="Script" uid="uid://dcqlx25iavu1b" path="res://Levels/Level.gd" id="1_gbhdq"]
+[ext_resource type="Texture2D" uid="uid://bp853bjbn6yv1" path="res://Levels/asphalt_02_4k.blend/textures/0482addebebc9db1cedc2a4cb35a9d15.webp" id="1_sb12i"]
+[ext_resource type="Script" uid="uid://bdadjae08bnj" path="res://Levels/obstacle_spawner.gd" id="2_gbhdq"]
+[ext_resource type="Texture2D" uid="uid://bjsvor0itm6u3" path="res://Levels/asphalt_02_4k.blend/sand_texture.jpg" id="2_y646j"]
+[ext_resource type="PackedScene" uid="uid://cdawxgwhsllqm" path="res://avery_resources/obstacles used/log.tscn" id="3_y646j"]
+[ext_resource type="PackedScene" uid="uid://c8i5cj6jexpt" path="res://avery_resources/obstacles used/roadrock.tscn" id="4_lnbra"]
+[ext_resource type="Texture2D" uid="uid://blpivun3q78jx" path="res://Levels/asphalt_02_4k.blend/textures/asphalt_02_diff_4k.jpg" id="5_6emce"]
+[ext_resource type="PackedScene" uid="uid://d0qfosfhpmyqc" path="res://Art/Low poly desert 3d models .glb/cactus.glb" id="8_tswv6"]
+[ext_resource type="PackedScene" uid="uid://br7tg3qbgj1o7" path="res://Art/Low poly desert 3d models .glb/3set_mountain.glb" id="9_5h8t8"]
+[ext_resource type="PackedScene" uid="uid://dkflcnmm6jqqk" path="res://Art/Low poly desert 3d models .glb/Large_sand_mountain.glb" id="10_8x4ko"]
+[ext_resource type="PackedScene" uid="uid://ct8ficrlb3p37" path="res://Art/Low poly desert 3d models .glb/cube_cliff.glb" id="11_rurp3"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_lnbra"]
+albedo_texture = ExtResource("2_y646j")
+
+[sub_resource type="BoxMesh" id="BoxMesh_6emce"]
+size = Vector3(5000, 5000, 1)
+
+[sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_lowby"]
+
+[sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_lowby"]
+
+[sub_resource type="Sky" id="Sky_mcyyx"]
+sky_material = SubResource("ProceduralSkyMaterial_lowby")
+
+[sub_resource type="Environment" id="Environment_58smv"]
+background_mode = 2
+sky = SubResource("Sky_mcyyx")
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_a25ih"]
+size = Vector3(44.1823, 20, 20)
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_38et7"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_yo2ij"]
+albedo_texture = ExtResource("1_sb12i")
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_b7ax5"]
+material = SubResource("StandardMaterial3D_yo2ij")
+size = Vector2(50, 2)
+
+[sub_resource type="Curve3D" id="Curve3D_4bgwg"]
+closed = true
+_data = {
+"points": PackedVector3Array(-0.839691, 0, 29.4105, 0.839691, 0, -29.4105, -374.148, -4.61687, 188.217, 0, 0, 0, 0, 0, 0, -315.15, -4.61687, -23.309, -30.5897, 0, 15.579, 30.5897, 0, -15.579, -263.047, -4.61687, -113.514, -37.6917, 0, -14.7802, 37.6917, 0, 14.7802, -141.45, -4.61687, -25.8425, -46.9184, 0, 14.4973, 46.9184, 0, -14.4973, -34.7374, -4.61687, -104.48, -54.308, 0, -8.2647, 54.308, 0, 8.2647, 73.4996, -4.61687, -124.299, -14.0877, 0, -58.3119, 14.0877, 0, 58.3119, 154.296, -4.61687, -49.5997, 21.4703, 0, -53.4031, -21.4703, 0, 53.4031, 113.136, -4.61687, 134.861, 25.3819, 0, 17.1514, -25.3819, 0, -17.1514, 34.1334, -4.61687, 195.745, 74.4386, 0, -6.00088, -74.4386, 0, 6.00088, -65.9557, -4.61687, 163.874, -28.2833, 0, -22.6758, 28.2833, 0, 22.6758, -168.391, -4.61687, 275.59, -20.8159, 0, -62.4475, 20.8159, 0, 62.4475, -149.788, -4.61687, 366.066, 21.0001, 0, 34.399, -21.0001, 0, -34.399, -294.363, -4.61687, 387.761),
+"tilts": PackedFloat32Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0)
+}
+point_count = 13
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_2hfll"]
+albedo_texture = ExtResource("5_6emce")
+uv1_scale = Vector3(0.1, 0.1, 0.1)
+uv1_triplanar = true
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_7fqlb"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_e8hb2"]
+albedo_color = Color(0, 0, 0, 1)
+
+[node name="Desert" type="Node3D" node_paths=PackedStringArray("track", "checkpoint")]
+script = ExtResource("1_gbhdq")
+track = NodePath("Path")
+checkpoint = NodePath("Track/checkpoint")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="."]
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="StaticBody3D"]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, -92.922, 4.065, 0)
+material_override = SubResource("StandardMaterial3D_lnbra")
+mesh = SubResource("BoxMesh_6emce")
+skeleton = NodePath("../..")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -129.302, 0, 38.8296)
+shape = SubResource("ConvexPolygonShape3D_lowby")
+debug_color = Color(0.748356, 2.06e-05, 0.533819, 0.42)
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource("Environment_58smv")
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="WorldEnvironment"]
+transform = Transform3D(0.738455, 0.190384, 0.646868, 0, -0.959314, 0.282342, 0.674302, -0.208497, -0.708411, 5, 5.338, 0)
+light_color = Color(0.984314, 0.760784, 0.52549, 1)
+light_energy = 2.182
+light_indirect_energy = 0.812
+light_angular_distance = 8.75
+shadow_enabled = true
+
+[node name="Track" type="Node3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 4.61687, 0)
+
+[node name="checkpoint" type="Area3D" parent="Track"]
+transform = Transform3D(0.910496, 0, -0.413518, 0, 1, 0, 0.413518, 0, 0.910496, 6.2816, 2.95721, -113.028)
+collision_mask = 65535
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Track/checkpoint"]
+transform = Transform3D(0.717567, 0, -0.696489, 0, 1, 0, 0.696489, 0, 0.717567, -1.0022, -0.590285, 1.30079)
+shape = SubResource("BoxShape3D_a25ih")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Track/checkpoint"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -3.12435, 0)
+mesh = SubResource("PlaneMesh_38et7")
+
+[node name="Finish Line" type="MeshInstance3D" parent="Track"]
+transform = Transform3D(0.218723, 0, -7.18015, 0, 1, 0, 0.599861, 0, 2.61804, 0, 0.0890274, -116.81)
+mesh = SubResource("PlaneMesh_b7ax5")
+skeleton = NodePath("../..")
+
+[node name="SpawnPoints" type="Node3D" parent="."]
+transform = Transform3D(0.894615, 0, -0.446838, 0, 1, 0, 0.446838, 0, 0.894615, -20.8813, 5.54447, -112.148)
+
+[node name="Marker3D" type="Marker3D" parent="SpawnPoints" groups=["spawn_points"]]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.9986, 0, -7.66129)
+
+[node name="Marker3D2" type="Marker3D" parent="SpawnPoints" groups=["spawn_points"]]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8.21646, 0, -2.88686)
+
+[node name="Marker3D3" type="Marker3D" parent="SpawnPoints" groups=["spawn_points"]]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -9.90054, 0, 4.42823)
+
+[node name="Marker3D4" type="Marker3D" parent="SpawnPoints" groups=["spawn_points"]]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.68267, 0, 9.20266)
+
+[node name="Marker3D5" type="Marker3D" parent="SpawnPoints" groups=["spawn_points"]]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -19.515, 0, 13.7572)
+
+[node name="Marker3D6" type="Marker3D" parent="SpawnPoints" groups=["spawn_points"]]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -13.2972, 0, 18.5316)
+
+[node name="Marker3D7" type="Marker3D" parent="SpawnPoints" groups=["spawn_points"]]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -27.6701, 0, 26.9572)
+
+[node name="Marker3D8" type="Marker3D" parent="SpawnPoints" groups=["spawn_points"]]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -21.4523, 0, 31.7316)
+
+[node name="ObstacleSpawner" type="Node3D" parent="."]
+script = ExtResource("2_gbhdq")
+obstacle_scenes = Array[PackedScene]([ExtResource("3_y646j"), ExtResource("4_lnbra")])
+count = 200
+path_node = NodePath("../Path")
+y_level = 4.5
+
+[node name="Path" type="Path3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 4.61687, 0)
+curve = SubResource("Curve3D_4bgwg")
+
+[node name="Road" type="CSGPolygon3D" parent="Path"]
+material_override = SubResource("StandardMaterial3D_2hfll")
+use_collision = true
+flip_faces = true
+polygon = PackedVector2Array(-16, 0, -16, 0.1, 16, 0.1, 16, 0)
+mode = 2
+path_node = NodePath("..")
+path_interval_type = 0
+path_interval = 1.0
+path_simplify_angle = 0.0
+path_rotation = 2
+path_rotation_accurate = false
+path_local = false
+path_continuous_u = true
+path_u_distance = 1.0
+path_joined = true
+
+[node name="LeftWall" type="CSGPolygon3D" parent="Path"]
+use_collision = true
+polygon = PackedVector2Array(-16, 0, -16, 1, -15.8, 1, -15.8, 0)
+mode = 2
+path_node = NodePath("..")
+path_interval_type = 0
+path_interval = 0.1
+path_simplify_angle = 0.0
+path_rotation = 2
+path_rotation_accurate = false
+path_local = false
+path_continuous_u = true
+path_u_distance = 1.0
+path_joined = true
+material = SubResource("StandardMaterial3D_7fqlb")
+
+[node name="RightWall" type="CSGPolygon3D" parent="Path"]
+use_collision = true
+polygon = PackedVector2Array(16, 0, 16, 1, 16.2, 1, 16.2, 0)
+mode = 2
+path_node = NodePath("..")
+path_interval_type = 0
+path_interval = 1.0
+path_simplify_angle = 0.0
+path_rotation = 2
+path_rotation_accurate = false
+path_local = false
+path_continuous_u = true
+path_u_distance = 1.0
+path_joined = false
+material = SubResource("StandardMaterial3D_e8hb2")
+
+[node name="Desert Skyline" type="Node3D" parent="."]
+
+[node name="Desert Mountains" type="Node3D" parent="Desert Skyline"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 268.347, 0, 286.581)
+
+[node name="3set_mountain" parent="Desert Skyline/Desert Mountains" instance=ExtResource("9_5h8t8")]
+transform = Transform3D(23, 0, 0, 0, 23, 0, 0, 0, 23, -557.509, -23.6481, 1386.36)
+
+[node name="Large_sand_mountain" parent="Desert Skyline/Desert Mountains" instance=ExtResource("10_8x4ko")]
+transform = Transform3D(15, 0, 0, 0, 15, 0, 0, 0, 15, -412.509, -23.64, 1536.42)
+
+[node name="cube_cliff" parent="Desert Skyline/Desert Mountains" instance=ExtResource("11_rurp3")]
+transform = Transform3D(-1.09278e-06, 0, 25, 0, 25, 0, -25, 0, -1.09278e-06, -1361.37, -38.8403, 1166.74)
+
+[node name="3set_mountain2" parent="Desert Skyline/Desert Mountains" instance=ExtResource("9_5h8t8")]
+transform = Transform3D(-8.68241, 0, 49.2404, 0, 50, 0, -49.2404, 0, -8.68241, -638.834, -54.3528, 852.087)
+
+[node name="Desert Mountains2" type="Node3D" parent="Desert Skyline"]
+transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 713.083, 97.3193, 3638.43)
+
+[node name="3set_mountain" parent="Desert Skyline/Desert Mountains2" instance=ExtResource("9_5h8t8")]
+transform = Transform3D(-1.00536e-06, 0, 23, 0, 23, 0, -23, 0, -1.00536e-06, -417.579, -96.7204, 1460.68)
+
+[node name="Large_sand_mountain" parent="Desert Skyline/Desert Mountains2" instance=ExtResource("10_8x4ko")]
+transform = Transform3D(15, 0, -1.13687e-13, 0, 15, 0, 1.13687e-13, 0, 15, -476.623, -91.2929, 1690.44)
+
+[node name="cube_cliff" parent="Desert Skyline/Desert Mountains2" instance=ExtResource("11_rurp3")]
+transform = Transform3D(-1.09278e-06, 0, 25, 0, 25, 0, -25, 0, -1.09278e-06, -1361.37, -151.71, 1166.74)
+
+[node name="3set_mountain2" parent="Desert Skyline/Desert Mountains2" instance=ExtResource("9_5h8t8")]
+transform = Transform3D(-8.68241, 0, 49.2404, 0, 50, 0, -49.2404, 0, -8.68241, -638.834, -175.315, 852.087)
+
+[node name="3set_mountain3" parent="Desert Skyline/Desert Mountains2" instance=ExtResource("9_5h8t8")]
+transform = Transform3D(25, 0, 0, 0, 25, 0, 0, 0, 25, -779.873, -95.9584, 1634.51)
+
+[node name="Desert Mountains3" type="Node3D" parent="Desert Skyline"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1274, 0, 377.714)
+
+[node name="3set_mountain" parent="Desert Skyline/Desert Mountains3" instance=ExtResource("9_5h8t8")]
+transform = Transform3D(23, 0, 0, 0, 23, 0, 0, 0, 23, -557.509, -23.6481, 1386.36)
+
+[node name="Large_sand_mountain" parent="Desert Skyline/Desert Mountains3" instance=ExtResource("10_8x4ko")]
+transform = Transform3D(15, 0, 0, 0, 15, 0, 0, 0, 15, -412.509, -23.64, 1536.42)
+
+[node name="cube_cliff" parent="Desert Skyline/Desert Mountains3" instance=ExtResource("11_rurp3")]
+transform = Transform3D(-1.09278e-06, 0, 25, 0, 25, 0, -25, 0, -1.09278e-06, -1361.37, -38.8403, 1166.74)
+
+[node name="3set_mountain2" parent="Desert Skyline/Desert Mountains3" instance=ExtResource("9_5h8t8")]
+transform = Transform3D(-8.68241, 0, 49.2404, 0, 50, 0, -49.2404, 0, -8.68241, -638.834, -54.3528, 852.087)
+
+[node name="Desert Skyline2" type="Node3D" parent="."]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 114.9, 0, 915.193)
+
+[node name="Desert Mountains" type="Node3D" parent="Desert Skyline2"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 268.347, 0, 286.581)
+
+[node name="3set_mountain" parent="Desert Skyline2/Desert Mountains" instance=ExtResource("9_5h8t8")]
+transform = Transform3D(23, 0, 0, 0, 23, 0, 0, 0, 23, -557.509, -23.6481, 1386.36)
+
+[node name="Large_sand_mountain" parent="Desert Skyline2/Desert Mountains" instance=ExtResource("10_8x4ko")]
+transform = Transform3D(15, 0, 0, 0, 15, 0, 0, 0, 15, -412.509, -23.64, 1536.42)
+
+[node name="cube_cliff" parent="Desert Skyline2/Desert Mountains" instance=ExtResource("11_rurp3")]
+transform = Transform3D(-1.09278e-06, 0, 25, 0, 25, 0, -25, 0, -1.09278e-06, -1361.37, -38.8403, 1166.74)
+
+[node name="3set_mountain2" parent="Desert Skyline2/Desert Mountains" instance=ExtResource("9_5h8t8")]
+transform = Transform3D(-8.68241, 0, 49.2404, 0, 50, 0, -49.2404, 0, -8.68241, -638.834, -54.3528, 852.087)
+
+[node name="Desert Mountains2" type="Node3D" parent="Desert Skyline2"]
+transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 713.083, 97.3193, 3638.43)
+
+[node name="3set_mountain" parent="Desert Skyline2/Desert Mountains2" instance=ExtResource("9_5h8t8")]
+transform = Transform3D(-1.00536e-06, 0, 23, 0, 23, 0, -23, 0, -1.00536e-06, -417.579, -96.7204, 1460.68)
+
+[node name="Large_sand_mountain" parent="Desert Skyline2/Desert Mountains2" instance=ExtResource("10_8x4ko")]
+transform = Transform3D(15, 0, -1.13687e-13, 0, 15, 0, 1.13687e-13, 0, 15, -476.623, -91.2929, 1690.44)
+
+[node name="cube_cliff" parent="Desert Skyline2/Desert Mountains2" instance=ExtResource("11_rurp3")]
+transform = Transform3D(-1.09278e-06, 0, 25, 0, 25, 0, -25, 0, -1.09278e-06, -1361.37, -151.71, 1166.74)
+
+[node name="3set_mountain2" parent="Desert Skyline2/Desert Mountains2" instance=ExtResource("9_5h8t8")]
+transform = Transform3D(-8.68241, 0, 49.2404, 0, 50, 0, -49.2404, 0, -8.68241, -638.834, -175.315, 852.087)
+
+[node name="3set_mountain3" parent="Desert Skyline2/Desert Mountains2" instance=ExtResource("9_5h8t8")]
+transform = Transform3D(25, 0, 0, 0, 25, 0, 0, 0, 25, -779.873, -95.9584, 1634.51)
+
+[node name="Desert Mountains3" type="Node3D" parent="Desert Skyline2"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1274, 0, 377.714)
+
+[node name="3set_mountain" parent="Desert Skyline2/Desert Mountains3" instance=ExtResource("9_5h8t8")]
+transform = Transform3D(23, 0, 0, 0, 23, 0, 0, 0, 23, -557.509, -23.6481, 1386.36)
+
+[node name="Large_sand_mountain" parent="Desert Skyline2/Desert Mountains3" instance=ExtResource("10_8x4ko")]
+transform = Transform3D(15, 0, 0, 0, 15, 0, 0, 0, 15, -412.509, -23.64, 1536.42)
+
+[node name="cube_cliff" parent="Desert Skyline2/Desert Mountains3" instance=ExtResource("11_rurp3")]
+transform = Transform3D(-1.09278e-06, 0, 25, 0, 25, 0, -25, 0, -1.09278e-06, -1361.37, -38.8403, 1166.74)
+
+[node name="3set_mountain2" parent="Desert Skyline2/Desert Mountains3" instance=ExtResource("9_5h8t8")]
+transform = Transform3D(-8.68241, 0, 49.2404, 0, 50, 0, -49.2404, 0, -8.68241, -638.834, -54.3528, 852.087)
+
+[node name="Desert Skyline3" type="Node3D" parent="."]
+transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 1451.6, 0, -416.551)
+
+[node name="Desert Mountains" type="Node3D" parent="Desert Skyline3"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 268.347, 0, 286.581)
+
+[node name="3set_mountain" parent="Desert Skyline3/Desert Mountains" instance=ExtResource("9_5h8t8")]
+transform = Transform3D(23, 0, 0, 0, 23, 0, 0, 0, 23, -557.509, -23.6481, 1386.36)
+
+[node name="Large_sand_mountain" parent="Desert Skyline3/Desert Mountains" instance=ExtResource("10_8x4ko")]
+transform = Transform3D(15, 0, 0, 0, 15, 0, 0, 0, 15, -412.509, -23.64, 1536.42)
+
+[node name="cube_cliff" parent="Desert Skyline3/Desert Mountains" instance=ExtResource("11_rurp3")]
+transform = Transform3D(-1.09278e-06, 0, 25, 0, 25, 0, -25, 0, -1.09278e-06, -1361.37, -38.8403, 1166.74)
+
+[node name="3set_mountain2" parent="Desert Skyline3/Desert Mountains" instance=ExtResource("9_5h8t8")]
+transform = Transform3D(-8.68241, 0, 49.2404, 0, 50, 0, -49.2404, 0, -8.68241, -638.834, -54.3528, 852.087)
+
+[node name="Desert Mountains2" type="Node3D" parent="Desert Skyline3"]
+transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 713.083, 97.3193, 3638.43)
+
+[node name="3set_mountain" parent="Desert Skyline3/Desert Mountains2" instance=ExtResource("9_5h8t8")]
+transform = Transform3D(-1.00536e-06, 0, 23, 0, 23, 0, -23, 0, -1.00536e-06, -417.579, -96.7204, 1460.68)
+
+[node name="Large_sand_mountain" parent="Desert Skyline3/Desert Mountains2" instance=ExtResource("10_8x4ko")]
+transform = Transform3D(15, 0, -1.13687e-13, 0, 15, 0, 1.13687e-13, 0, 15, -476.623, -91.2929, 1690.44)
+
+[node name="cube_cliff" parent="Desert Skyline3/Desert Mountains2" instance=ExtResource("11_rurp3")]
+transform = Transform3D(-1.09278e-06, 0, 25, 0, 25, 0, -25, 0, -1.09278e-06, -1361.37, -151.71, 1166.74)
+
+[node name="3set_mountain2" parent="Desert Skyline3/Desert Mountains2" instance=ExtResource("9_5h8t8")]
+transform = Transform3D(-8.68241, 0, 49.2404, 0, 50, 0, -49.2404, 0, -8.68241, -638.834, -175.315, 852.087)
+
+[node name="3set_mountain3" parent="Desert Skyline3/Desert Mountains2" instance=ExtResource("9_5h8t8")]
+transform = Transform3D(25, 0, 0, 0, 25, 0, 0, 0, 25, -779.873, -95.9584, 1634.51)
+
+[node name="Desert Mountains3" type="Node3D" parent="Desert Skyline3"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1274, 0, 377.714)
+
+[node name="3set_mountain" parent="Desert Skyline3/Desert Mountains3" instance=ExtResource("9_5h8t8")]
+transform = Transform3D(23, 0, 0, 0, 23, 0, 0, 0, 23, -557.509, -23.6481, 1386.36)
+
+[node name="Large_sand_mountain" parent="Desert Skyline3/Desert Mountains3" instance=ExtResource("10_8x4ko")]
+transform = Transform3D(15, 0, 0, 0, 15, 0, 0, 0, 15, -412.509, -23.64, 1536.42)
+
+[node name="cube_cliff" parent="Desert Skyline3/Desert Mountains3" instance=ExtResource("11_rurp3")]
+transform = Transform3D(-1.09278e-06, 0, 25, 0, 25, 0, -25, 0, -1.09278e-06, -1361.37, -38.8403, 1166.74)
+
+[node name="3set_mountain2" parent="Desert Skyline3/Desert Mountains3" instance=ExtResource("9_5h8t8")]
+transform = Transform3D(-8.68241, 0, 49.2404, 0, 50, 0, -49.2404, 0, -8.68241, -638.834, -54.3528, 852.087)
+
+[node name="Desert Mountains" type="Node3D" parent="."]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 686.964, 0, -2203.91)
+
+[node name="3set_mountain" parent="Desert Mountains" instance=ExtResource("9_5h8t8")]
+transform = Transform3D(23, 0, 0, 0, 23, 0, 0, 0, 23, -557.509, -23.6481, 1386.36)
+
+[node name="Large_sand_mountain" parent="Desert Mountains" instance=ExtResource("10_8x4ko")]
+transform = Transform3D(15, 0, 0, 0, 15, 0, 0, 0, 15, -412.509, -23.64, 1536.42)
+
+[node name="cube_cliff" parent="Desert Mountains" instance=ExtResource("11_rurp3")]
+transform = Transform3D(-1.09278e-06, 0, 25, 0, 25, 0, -25, 0, -1.09278e-06, -1361.37, -38.8403, 1166.74)
+
+[node name="3set_mountain2" parent="Desert Mountains" instance=ExtResource("9_5h8t8")]
+transform = Transform3D(-8.68241, 0, 49.2404, 0, 50, 0, -49.2404, 0, -8.68241, -638.834, -54.3528, 852.087)
+
+[node name="Desert Skyline4" type="Node3D" parent="."]
+transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, -641.171, 0, -180.798)
+
+[node name="Desert Mountains" type="Node3D" parent="Desert Skyline4"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 268.347, 0, 286.581)
+
+[node name="3set_mountain" parent="Desert Skyline4/Desert Mountains" instance=ExtResource("9_5h8t8")]
+transform = Transform3D(23, 0, 0, 0, 23, 0, 0, 0, 23, -557.509, -23.6481, 1386.36)
+
+[node name="Large_sand_mountain" parent="Desert Skyline4/Desert Mountains" instance=ExtResource("10_8x4ko")]
+transform = Transform3D(15, 0, 0, 0, 15, 0, 0, 0, 15, -412.509, -23.64, 1536.42)
+
+[node name="cube_cliff" parent="Desert Skyline4/Desert Mountains" instance=ExtResource("11_rurp3")]
+transform = Transform3D(-1.09278e-06, 0, 25, 0, 25, 0, -25, 0, -1.09278e-06, -1361.37, -38.8403, 1166.74)
+
+[node name="3set_mountain2" parent="Desert Skyline4/Desert Mountains" instance=ExtResource("9_5h8t8")]
+transform = Transform3D(-8.68241, 0, 49.2404, 0, 50, 0, -49.2404, 0, -8.68241, -638.834, -54.3528, 852.087)
+
+[node name="Desert Mountains2" type="Node3D" parent="Desert Skyline4"]
+transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 713.083, 97.3193, 3638.43)
+
+[node name="3set_mountain" parent="Desert Skyline4/Desert Mountains2" instance=ExtResource("9_5h8t8")]
+transform = Transform3D(-1.00536e-06, 0, 23, 0, 23, 0, -23, 0, -1.00536e-06, -417.579, -96.7204, 1460.68)
+
+[node name="Large_sand_mountain" parent="Desert Skyline4/Desert Mountains2" instance=ExtResource("10_8x4ko")]
+transform = Transform3D(15, 0, -1.13687e-13, 0, 15, 0, 1.13687e-13, 0, 15, -476.623, -91.2929, 1690.44)
+
+[node name="cube_cliff" parent="Desert Skyline4/Desert Mountains2" instance=ExtResource("11_rurp3")]
+transform = Transform3D(-1.09278e-06, 0, 25, 0, 25, 0, -25, 0, -1.09278e-06, -1361.37, -151.71, 1166.74)
+
+[node name="3set_mountain2" parent="Desert Skyline4/Desert Mountains2" instance=ExtResource("9_5h8t8")]
+transform = Transform3D(-8.68241, 0, 49.2404, 0, 50, 0, -49.2404, 0, -8.68241, -638.834, -175.315, 852.087)
+
+[node name="3set_mountain3" parent="Desert Skyline4/Desert Mountains2" instance=ExtResource("9_5h8t8")]
+transform = Transform3D(25, 0, 0, 0, 25, 0, 0, 0, 25, -779.873, -95.9584, 1634.51)
+
+[node name="Desert Mountains3" type="Node3D" parent="Desert Skyline4"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1274, 0, 377.714)
+
+[node name="3set_mountain" parent="Desert Skyline4/Desert Mountains3" instance=ExtResource("9_5h8t8")]
+transform = Transform3D(23, 0, 0, 0, 23, 0, 0, 0, 23, -557.509, -23.6481, 1386.36)
+
+[node name="Large_sand_mountain" parent="Desert Skyline4/Desert Mountains3" instance=ExtResource("10_8x4ko")]
+transform = Transform3D(15, 0, 0, 0, 15, 0, 0, 0, 15, -412.509, -23.64, 1536.42)
+
+[node name="cube_cliff" parent="Desert Skyline4/Desert Mountains3" instance=ExtResource("11_rurp3")]
+transform = Transform3D(-1.09278e-06, 0, 25, 0, 25, 0, -25, 0, -1.09278e-06, -1361.37, -38.8403, 1166.74)
+
+[node name="3set_mountain2" parent="Desert Skyline4/Desert Mountains3" instance=ExtResource("9_5h8t8")]
+transform = Transform3D(-8.68241, 0, 49.2404, 0, 50, 0, -49.2404, 0, -8.68241, -638.834, -54.3528, 852.087)
+
+[node name="Desert Skyline5" type="Node3D" parent="."]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -4239.56, 0, 66.163)
+
+[node name="Desert Mountains" type="Node3D" parent="Desert Skyline5"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 268.347, 0, 286.581)
+
+[node name="3set_mountain" parent="Desert Skyline5/Desert Mountains" instance=ExtResource("9_5h8t8")]
+transform = Transform3D(23, 0, 0, 0, 23, 0, 0, 0, 23, -557.509, -23.6481, 1386.36)
+
+[node name="Large_sand_mountain" parent="Desert Skyline5/Desert Mountains" instance=ExtResource("10_8x4ko")]
+transform = Transform3D(15, 0, 0, 0, 15, 0, 0, 0, 15, -412.509, -23.64, 1536.42)
+
+[node name="cube_cliff" parent="Desert Skyline5/Desert Mountains" instance=ExtResource("11_rurp3")]
+transform = Transform3D(-1.09278e-06, 0, 25, 0, 25, 0, -25, 0, -1.09278e-06, -1361.37, -38.8403, 1166.74)
+
+[node name="3set_mountain2" parent="Desert Skyline5/Desert Mountains" instance=ExtResource("9_5h8t8")]
+transform = Transform3D(-8.68241, 0, 49.2404, 0, 50, 0, -49.2404, 0, -8.68241, -638.834, -54.3528, 852.087)
+
+[node name="Desert Mountains2" type="Node3D" parent="Desert Skyline5"]
+transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 713.083, 97.3193, 3638.43)
+
+[node name="3set_mountain" parent="Desert Skyline5/Desert Mountains2" instance=ExtResource("9_5h8t8")]
+transform = Transform3D(-1.00536e-06, 0, 23, 0, 23, 0, -23, 0, -1.00536e-06, -417.579, -96.7204, 1460.68)
+
+[node name="Large_sand_mountain" parent="Desert Skyline5/Desert Mountains2" instance=ExtResource("10_8x4ko")]
+transform = Transform3D(15, 0, -1.13687e-13, 0, 15, 0, 1.13687e-13, 0, 15, -476.623, -91.2929, 1690.44)
+
+[node name="cube_cliff" parent="Desert Skyline5/Desert Mountains2" instance=ExtResource("11_rurp3")]
+transform = Transform3D(-1.09278e-06, 0, 25, 0, 25, 0, -25, 0, -1.09278e-06, -1361.37, -151.71, 1166.74)
+
+[node name="3set_mountain2" parent="Desert Skyline5/Desert Mountains2" instance=ExtResource("9_5h8t8")]
+transform = Transform3D(-8.68241, 0, 49.2404, 0, 50, 0, -49.2404, 0, -8.68241, -638.834, -175.315, 852.087)
+
+[node name="3set_mountain3" parent="Desert Skyline5/Desert Mountains2" instance=ExtResource("9_5h8t8")]
+transform = Transform3D(25, 0, 0, 0, 25, 0, 0, 0, 25, -779.873, -95.9584, 1634.51)
+
+[node name="Desert Mountains3" type="Node3D" parent="Desert Skyline5"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1274, 0, 377.714)
+
+[node name="3set_mountain" parent="Desert Skyline5/Desert Mountains3" instance=ExtResource("9_5h8t8")]
+transform = Transform3D(23, 0, 0, 0, 23, 0, 0, 0, 23, -557.509, -23.6481, 1386.36)
+
+[node name="Large_sand_mountain" parent="Desert Skyline5/Desert Mountains3" instance=ExtResource("10_8x4ko")]
+transform = Transform3D(15, 0, 0, 0, 15, 0, 0, 0, 15, -412.509, -23.64, 1536.42)
+
+[node name="cube_cliff" parent="Desert Skyline5/Desert Mountains3" instance=ExtResource("11_rurp3")]
+transform = Transform3D(-1.09278e-06, 0, 25, 0, 25, 0, -25, 0, -1.09278e-06, -1361.37, -38.8403, 1166.74)
+
+[node name="3set_mountain2" parent="Desert Skyline5/Desert Mountains3" instance=ExtResource("9_5h8t8")]
+transform = Transform3D(-8.68241, 0, 49.2404, 0, 50, 0, -49.2404, 0, -8.68241, -638.834, -54.3528, 852.087)
+
+[node name="Desert Skyline6" type="Node3D" parent="."]
+
+[node name="Desert Mountains" type="Node3D" parent="Desert Skyline6"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 268.347, 0, 286.581)
+
+[node name="3set_mountain" parent="Desert Skyline6/Desert Mountains" instance=ExtResource("9_5h8t8")]
+transform = Transform3D(23, 0, 0, 0, 23, 0, 0, 0, 23, -557.509, -23.6481, 1386.36)
+
+[node name="Large_sand_mountain" parent="Desert Skyline6/Desert Mountains" instance=ExtResource("10_8x4ko")]
+transform = Transform3D(15, 0, 0, 0, 15, 0, 0, 0, 15, -412.509, -23.64, 1536.42)
+
+[node name="cube_cliff" parent="Desert Skyline6/Desert Mountains" instance=ExtResource("11_rurp3")]
+transform = Transform3D(-1.09278e-06, 0, 25, 0, 25, 0, -25, 0, -1.09278e-06, -1361.37, -38.8403, 1166.74)
+
+[node name="3set_mountain2" parent="Desert Skyline6/Desert Mountains" instance=ExtResource("9_5h8t8")]
+transform = Transform3D(-8.68241, 0, 49.2404, 0, 50, 0, -49.2404, 0, -8.68241, -638.834, -54.3528, 852.087)
+
+[node name="Desert Mountains2" type="Node3D" parent="Desert Skyline6"]
+transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 713.083, 97.3193, 3638.43)
+
+[node name="3set_mountain" parent="Desert Skyline6/Desert Mountains2" instance=ExtResource("9_5h8t8")]
+transform = Transform3D(-1.00536e-06, 0, 23, 0, 23, 0, -23, 0, -1.00536e-06, -417.579, -96.7204, 1460.68)
+
+[node name="Large_sand_mountain" parent="Desert Skyline6/Desert Mountains2" instance=ExtResource("10_8x4ko")]
+transform = Transform3D(15, 0, -1.13687e-13, 0, 15, 0, 1.13687e-13, 0, 15, -476.623, -91.2929, 1690.44)
+
+[node name="cube_cliff" parent="Desert Skyline6/Desert Mountains2" instance=ExtResource("11_rurp3")]
+transform = Transform3D(-1.09278e-06, 0, 25, 0, 25, 0, -25, 0, -1.09278e-06, -1361.37, -151.71, 1166.74)
+
+[node name="3set_mountain2" parent="Desert Skyline6/Desert Mountains2" instance=ExtResource("9_5h8t8")]
+transform = Transform3D(-8.68241, 0, 49.2404, 0, 50, 0, -49.2404, 0, -8.68241, -638.834, -175.315, 852.087)
+
+[node name="3set_mountain3" parent="Desert Skyline6/Desert Mountains2" instance=ExtResource("9_5h8t8")]
+transform = Transform3D(25, 0, 0, 0, 25, 0, 0, 0, 25, -779.873, -95.9584, 1634.51)
+
+[node name="Desert Mountains3" type="Node3D" parent="Desert Skyline6"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1274, 0, 377.714)
+
+[node name="3set_mountain" parent="Desert Skyline6/Desert Mountains3" instance=ExtResource("9_5h8t8")]
+transform = Transform3D(23, 0, 0, 0, 23, 0, 0, 0, 23, -557.509, -23.6481, 1386.36)
+
+[node name="Large_sand_mountain" parent="Desert Skyline6/Desert Mountains3" instance=ExtResource("10_8x4ko")]
+transform = Transform3D(15, 0, 0, 0, 15, 0, 0, 0, 15, -412.509, -23.64, 1536.42)
+
+[node name="cube_cliff" parent="Desert Skyline6/Desert Mountains3" instance=ExtResource("11_rurp3")]
+transform = Transform3D(-1.09278e-06, 0, 25, 0, 25, 0, -25, 0, -1.09278e-06, -1361.37, -38.8403, 1166.74)
+
+[node name="3set_mountain2" parent="Desert Skyline6/Desert Mountains3" instance=ExtResource("9_5h8t8")]
+transform = Transform3D(-8.68241, 0, 49.2404, 0, 50, 0, -49.2404, 0, -8.68241, -638.834, -54.3528, 852.087)
+
+[node name="Desert Mountains2" type="Node3D" parent="."]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -3953.87, 0, 900.743)
+
+[node name="3set_mountain" parent="Desert Mountains2" instance=ExtResource("9_5h8t8")]
+transform = Transform3D(23, 0, 0, 0, 23, 0, 0, 0, 23, -557.509, -23.6481, 1386.36)
+
+[node name="Large_sand_mountain" parent="Desert Mountains2" instance=ExtResource("10_8x4ko")]
+transform = Transform3D(15, 0, 0, 0, 15, 0, 0, 0, 15, -412.509, -23.64, 1536.42)
+
+[node name="cube_cliff" parent="Desert Mountains2" instance=ExtResource("11_rurp3")]
+transform = Transform3D(-1.09278e-06, 0, 25, 0, 25, 0, -25, 0, -1.09278e-06, -1361.37, -38.8403, 1166.74)
+
+[node name="3set_mountain2" parent="Desert Mountains2" instance=ExtResource("9_5h8t8")]
+transform = Transform3D(-8.68241, 0, 49.2404, 0, 50, 0, -49.2404, 0, -8.68241, -638.834, -54.3528, 852.087)
+
+[node name="Desert Mountains3" type="Node3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -798.13, 0, 330.493)
+
+[node name="3set_mountain" parent="Desert Mountains3" instance=ExtResource("9_5h8t8")]
+transform = Transform3D(23, 0, 0, 0, 23, 0, 0, 0, 23, -557.509, -23.6481, 1386.36)
+
+[node name="Large_sand_mountain" parent="Desert Mountains3" instance=ExtResource("10_8x4ko")]
+transform = Transform3D(15, 0, 0, 0, 15, 0, 0, 0, 15, -412.509, -23.64, 1536.42)
+
+[node name="cube_cliff" parent="Desert Mountains3" instance=ExtResource("11_rurp3")]
+transform = Transform3D(-1.09278e-06, 0, 25, 0, 25, 0, -25, 0, -1.09278e-06, -1361.37, -38.8403, 1166.74)
+
+[node name="3set_mountain2" parent="Desert Mountains3" instance=ExtResource("9_5h8t8")]
+transform = Transform3D(-8.68241, 0, 49.2404, 0, 50, 0, -49.2404, 0, -8.68241, -638.834, -54.3528, 852.087)
+
+[node name="Cactus Bunches" type="Node3D" parent="."]
+
+[node name="cactus2" parent="Cactus Bunches" instance=ExtResource("8_tswv6")]
+transform = Transform3D(13, 0, 0, 0, 13, 0, 0, 0, 13, -29.1511, -17.8046, 265.869)
+
+[node name="cactus3" parent="Cactus Bunches" instance=ExtResource("8_tswv6")]
+transform = Transform3D(13, 0, 0, 0, 13, 0, 0, 0, 13, -294.782, -17.8046, 464.061)
+
+[node name="cactus4" parent="Cactus Bunches" instance=ExtResource("8_tswv6")]
+transform = Transform3D(13, 0, 0, 0, 13, 0, 0, 0, 13, 157.923, -17.8046, 307.698)
+
+[node name="cactus5" parent="Cactus Bunches" instance=ExtResource("8_tswv6")]
+transform = Transform3D(13, 0, 0, 0, 13, 0, 0, 0, 13, -102.767, -17.8046, 581.991)
+
+[node name="cactus6" parent="Cactus Bunches" instance=ExtResource("8_tswv6")]
+transform = Transform3D(13, 0, 0, 0, 13, 0, 0, 0, 13, 33.2274, -17.8046, 658.793)
+
+[node name="cactus7" parent="Cactus Bunches" instance=ExtResource("8_tswv6")]
+transform = Transform3D(13, 0, 0, 0, 13, 0, 0, 0, 13, 3.45659, -18.1335, 450.266)
+
+[node name="Cactus Bunches2" type="Node3D" parent="."]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -534.667, 0, -186.312)
+
+[node name="cactus2" parent="Cactus Bunches2" instance=ExtResource("8_tswv6")]
+transform = Transform3D(13, 0, 0, 0, 13, 0, 0, 0, 13, -29.1511, -17.8046, 265.869)
+
+[node name="cactus3" parent="Cactus Bunches2" instance=ExtResource("8_tswv6")]
+transform = Transform3D(13, 0, 0, 0, 13, 0, 0, 0, 13, -294.782, -17.8046, 464.061)
+
+[node name="cactus4" parent="Cactus Bunches2" instance=ExtResource("8_tswv6")]
+transform = Transform3D(13, 0, 0, 0, 13, 0, 0, 0, 13, 157.923, -17.8046, 307.698)
+
+[node name="cactus5" parent="Cactus Bunches2" instance=ExtResource("8_tswv6")]
+transform = Transform3D(13, 0, 0, 0, 13, 0, 0, 0, 13, -102.767, -17.8046, 581.991)
+
+[node name="cactus6" parent="Cactus Bunches2" instance=ExtResource("8_tswv6")]
+transform = Transform3D(13, 0, 0, 0, 13, 0, 0, 0, 13, 33.2274, -17.8046, 658.793)
+
+[node name="cactus7" parent="Cactus Bunches2" instance=ExtResource("8_tswv6")]
+transform = Transform3D(13, 0, 0, 0, 13, 0, 0, 0, 13, 3.45659, -18.1335, 450.266)
+
+[node name="Cactus Bunches3" type="Node3D" parent="."]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -849.708, 0, 35.1614)
+
+[node name="cactus2" parent="Cactus Bunches3" instance=ExtResource("8_tswv6")]
+transform = Transform3D(13, 0, 0, 0, 13, 0, 0, 0, 13, -29.1511, -17.8046, 265.869)
+
+[node name="cactus3" parent="Cactus Bunches3" instance=ExtResource("8_tswv6")]
+transform = Transform3D(13, 0, 0, 0, 13, 0, 0, 0, 13, -294.782, -17.8046, 464.061)
+
+[node name="cactus4" parent="Cactus Bunches3" instance=ExtResource("8_tswv6")]
+transform = Transform3D(13, 0, 0, 0, 13, 0, 0, 0, 13, 157.923, -17.8046, 307.698)
+
+[node name="cactus5" parent="Cactus Bunches3" instance=ExtResource("8_tswv6")]
+transform = Transform3D(13, 0, 0, 0, 13, 0, 0, 0, 13, -102.767, -17.8046, 581.991)
+
+[node name="cactus6" parent="Cactus Bunches3" instance=ExtResource("8_tswv6")]
+transform = Transform3D(13, 0, 0, 0, 13, 0, 0, 0, 13, 33.2274, -17.8046, 658.793)
+
+[node name="cactus7" parent="Cactus Bunches3" instance=ExtResource("8_tswv6")]
+transform = Transform3D(13, 0, 0, 0, 13, 0, 0, 0, 13, 3.45659, -18.1335, 450.266)
+
+[node name="Cactus Bunches4" type="Node3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 346.923, 0, -485.001)
+
+[node name="cactus2" parent="Cactus Bunches4" instance=ExtResource("8_tswv6")]
+transform = Transform3D(13, 0, 0, 0, 13, 0, 0, 0, 13, -29.1511, -17.8046, 265.869)
+
+[node name="cactus3" parent="Cactus Bunches4" instance=ExtResource("8_tswv6")]
+transform = Transform3D(13, 0, 0, 0, 13, 0, 0, 0, 13, -294.782, -17.8046, 464.061)
+
+[node name="cactus4" parent="Cactus Bunches4" instance=ExtResource("8_tswv6")]
+transform = Transform3D(13, 0, 0, 0, 13, 0, 0, 0, 13, 157.923, -17.8046, 307.698)
+
+[node name="cactus5" parent="Cactus Bunches4" instance=ExtResource("8_tswv6")]
+transform = Transform3D(13, 0, 0, 0, 13, 0, 0, 0, 13, -102.767, -17.8046, 581.991)
+
+[node name="cactus6" parent="Cactus Bunches4" instance=ExtResource("8_tswv6")]
+transform = Transform3D(13, 0, 0, 0, 13, 0, 0, 0, 13, 33.2274, -17.8046, 658.793)
+
+[node name="cactus7" parent="Cactus Bunches4" instance=ExtResource("8_tswv6")]
+transform = Transform3D(13, 0, 0, 0, 13, 0, 0, 0, 13, 3.45659, -18.1335, 450.266)

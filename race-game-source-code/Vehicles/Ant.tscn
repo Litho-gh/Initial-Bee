@@ -9,7 +9,7 @@
 albedo_texture = ExtResource("2_hu008")
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_a7hrl"]
-size = Vector3(1.60056, 0.644465, 1.25287)
+size = Vector3(1.60056, 0.644465, 1.9315)
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_q7ut8"]
 resource_name = "Mat"
@@ -160,17 +160,17 @@ center_of_mass_mode = 1
 center_of_mass = Vector3(0, 0.01, 0)
 linear_damp = 0.07
 script = ExtResource("1_h3vco")
-vehicle_name = "Jeep"
+vehicle_name = "Ant"
 max_engine_force = 16000.0
 
-[node name="Jeep_mesh" type="MeshInstance3D" parent="."]
-transform = Transform3D(-2.62268e-08, 0, -0.6, 0, 0.6, 0, 0.6, 0, -2.62268e-08, 0, -0.0354595, -0.00452526)
+[node name="ant_mesh" type="MeshInstance3D" parent="."]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 0, -0.0354595, -0.00452526)
 material_override = SubResource("StandardMaterial3D_1xshg")
 mesh = ExtResource("3_jjsqt")
 skeleton = NodePath("")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6.39521e-05, 0.807823, -0.0111994)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6.39521e-05, 0.807823, -0.00974815)
 shape = SubResource("BoxShape3D_a7hrl")
 
 [node name="front_right_tire" type="VehicleWheel3D" parent="."]
@@ -206,7 +206,7 @@ mesh = SubResource("ArrayMesh_vd6eh")
 skeleton = NodePath("")
 
 [node name="back_right_tire" type="VehicleWheel3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.855649, 0.428255, -0.755611)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.855649, 0.428255, -1.15034)
 use_as_traction = true
 wheel_radius = 0.45
 suspension_travel = 0.3
@@ -222,7 +222,7 @@ mesh = SubResource("ArrayMesh_5qyq2")
 skeleton = NodePath("")
 
 [node name="back_left_tire" type="VehicleWheel3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.856, 0.428, -0.749731)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.856, 0.428, -1.15)
 use_as_traction = true
 wheel_radius = 0.45
 suspension_travel = 0.3

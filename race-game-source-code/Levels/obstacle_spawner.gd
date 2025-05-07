@@ -2,7 +2,7 @@ extends Node3D
 
 @export var obstacle_scenes: Array[PackedScene] = []
 @export var count: int = 150
-@export var min_distance: float = 5.0
+@export var min_distance: float = 30.0
 @export var lateral_jitter_x: float = 10.0
 @export var lateral_jitter_z: float = 5.0
 @export var path_node: NodePath

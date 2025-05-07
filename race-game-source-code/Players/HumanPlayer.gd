@@ -2,6 +2,7 @@ extends Player
 class_name HumanPlayer
 
 var player_ui: Node
+var race_hud: Node
 
 var _is_moving_fast: bool = false
 var _is_reversing: bool = false
@@ -13,6 +14,11 @@ func _ready():
 	player_ui = SceneManager.load_scene("res://Players/UI/PlayerUI.tscn")
 	player_ui.visible = false # initially invisible
 	add_child(player_ui)
+	
+	# Race Hud
+	race_hud = SceneManager.load_scene("res://Players/UI/RaceHud.tscn")
+	race_hud.visible = true
+	add_child(race_hud)
 	
 	$origin.global_transform.origin = vehicle.global_transform.origin
 
@@ -67,14 +73,17 @@ func _input(event):
 		$origin.rotate_y(deg_to_rad(-mouse_delta.x * 0.2))
 		$origin/pivot.rotate_x(deg_to_rad(mouse_delta.y * 0.2))
 
-func get_vehicle_name():
-	return "Hymenopteracer"
-
 
 func _process(delta):
 	super(delta)
 	player_ui.display_all_players()
 	if finished or Input.is_action_pressed("ui_home"):
 		player_ui.visible = true
+		race_hud.visible = false
 	else:
 		player_ui.visible = false
+		race_hud.visible = true
+		
+	if race_hud.visible:
+		var speed = vehicle.get_linear_velocity().length() * 2.23694
+		race_hud.update_speed_and_lap(speed, lap, total_laps)

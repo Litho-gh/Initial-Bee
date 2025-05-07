@@ -1,7 +1,7 @@
 [gd_scene load_steps=3 format=3 uid="uid://ci0uvvapcks2v"]
 
 [ext_resource type="Script" uid="uid://ctthe762go82x" path="res://pause_menu.gd" id="1_nov15"]
-[ext_resource type="Texture2D" uid="uid://dq4orneo0wsw4" path="res://Art/bee racing.png" id="2_etnfi"]
+[ext_resource type="Texture2D" uid="uid://dq4orneo0wsw4" path="res://Art/Menu Art/bee racing.png" id="2_etnfi"]
 
 [node name="PauseMenu" type="Control"]
 process_mode = 2
@@ -47,9 +47,10 @@ text = "Restart"
 
 [node name="QuitButton" type="Button" parent="VBoxContainer"]
 layout_mode = 2
-text = "Quit"
+text = "Quit to Menu"
 
 [node name="TextureRect" type="TextureRect" parent="."]
+visible = false
 z_index = -1
 layout_mode = 0
 offset_left = 957.0

@@ -10,6 +10,7 @@ func _ready():
 func display_all_players():
 	var player_list = $Panel/Results/PlayerList
 
+	# Reset player list
 	for child in player_list.get_children():
 		player_list.remove_child(child)
 		child.queue_free()
@@ -17,7 +18,8 @@ func display_all_players():
 	# sort all_players array by players[i].timer value in ascending order
 	var players_sorted = []
 	for player in get_tree().get_nodes_in_group("players"):
-		var car_name = player.get_vehicle_name()
+		var car_name = player.vehicle.vehicle_name if player.vehicle else "Unknown"
+		car_name = player.vehicle.vehicle_name
 		players_sorted.append([player.name, car_name, player.timer])
 	
 	# Sort the players_sorted list by the timer values (second element of each sublist) without using lambda
@@ -44,7 +46,7 @@ func display_all_players():
 		car_label.size_flags_horizontal = Control.SIZE_EXPAND_FILL
 		
 		var time_label = Label.new()
-		time_label.text = str(snapped(player[2], 0.001))
+		time_label.text = str(snapped(player[2], 0.01))
 		time_label.horizontal_alignment = HORIZONTAL_ALIGNMENT_RIGHT
 		time_label.size_flags_horizontal = Control.SIZE_EXPAND_FILL
 		

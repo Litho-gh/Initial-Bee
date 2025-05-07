@@ -1,6 +1,5 @@
 
 # RULE: PLAYER MUST BE A PARENT OF 1 VEGICLE
-# Player 
 
 extends Node
 class_name Player
@@ -11,12 +10,13 @@ var finished: bool = false
 var distance_traveled: float = 0.0
 
 @export var vehicle: Vehicle3D
-
+@export var total_laps: int 
 
 # Constructor
-func with_data(_vehicle: Vehicle3D) -> Player:
+func with_data(_vehicle: Vehicle3D, _total_laps: int) -> Player:
 	set_vehicle(_vehicle)
-	return self # IMPORTANT
+	total_laps = _total_laps
+	return self 
 
 
 

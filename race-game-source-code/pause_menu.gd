@@ -2,6 +2,8 @@ extends Control
 
 var bg_music := AudioStreamPlayer.new()
 
+var main_menu = SceneManager.load_scene("res://MainMenu/MainMenu.tscn")
+
 func _ready():
 	visible = false
 	bg_music.stream = load("res://Sounds/Pause_music.wav")
@@ -9,12 +11,13 @@ func _ready():
 	bg_music.volume_db = -20
 	add_child(bg_music)
 	$VBoxContainer/ResumeButton.text = "Resume"
-	$VBoxContainer/QuitButton.text = "Quit"
+	$VBoxContainer/QuitButton.text = "Quit to Menu"
 	$VBoxContainer/RestartButton.text = "Restart"
 
 	$VBoxContainer/ResumeButton.pressed.connect(_on_resume_pressed)
 	$VBoxContainer/QuitButton.pressed.connect(_on_quit_pressed)
 	$VBoxContainer/RestartButton.pressed.connect(_on_restart_pressed)
+	
 
 func toggle_pause():
 	visible = not visible
@@ -31,7 +34,7 @@ func _on_resume_pressed():
 func _on_quit_pressed():
 	get_tree().paused = false
 	Input.set_mouse_mode(Input.MOUSE_MODE_VISIBLE)
-	get_tree().change_scene_to_file("res://MainMenu/MainMenu.tscn")  # Adjust if needed
+	SceneManager.switch_scene(main_menu)
 
 func _on_restart_pressed():
 	get_tree().paused = false

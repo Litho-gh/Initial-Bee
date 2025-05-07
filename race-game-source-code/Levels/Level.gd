@@ -27,9 +27,7 @@ func _ready():
 	get_tree().paused = false
 	Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
 	bg_music.stream = load("res://Sounds/city_track.wav")
-	bg_music.autoplay = true
-	bg_music.volume_db = -20
-	add_child(bg_music)
+
 
 	# Setup checkpoint listener
 	checkpoint.body_entered.connect(_on_checkpoint_body_entered)
@@ -71,7 +69,12 @@ func spawn_players():
 			player.vehicle.position - get_track_direction(checkpoint.global_position),
 			Vector3.UP
 		)
-		
+
+		if player is HumanPlayer:
+			player.name = "Hymenopteracer"
+		else:
+			player.name = "AI Player" + str(index)
+
 		if player is AIPlayer:
 			player.set_track(track)
 
@@ -111,6 +114,11 @@ func _process(delta):
 		level_ui.set_countdown_text(str(floor(race_countdown + 1)))
 	else:
 		level_ui.set_countdown_text("GO!")
+	
+	# Run music in process
+	bg_music.autoplay = true
+	bg_music.volume_db = -20
+	add_child(bg_music)
 
 func pause_players_process():
 	for p in get_tree().get_nodes_in_group("players"):
