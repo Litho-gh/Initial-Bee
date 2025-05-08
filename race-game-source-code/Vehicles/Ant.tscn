@@ -9,7 +9,7 @@
 albedo_texture = ExtResource("2_hu008")
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_a7hrl"]
-size = Vector3(1.60056, 0.644465, 1.9315)
+size = Vector3(2.2229, 0.644465, 2.79367)
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_q7ut8"]
 resource_name = "Mat"

@@ -1,7 +1,7 @@
 [gd_scene load_steps=3 format=3 uid="uid://ci0uvvapcks2v"]
 
 [ext_resource type="Script" uid="uid://ctthe762go82x" path="res://pause_menu.gd" id="1_nov15"]
-[ext_resource type="Texture2D" uid="uid://dq4orneo0wsw4" path="res://Art/Menu Art/bee racing.png" id="2_etnfi"]
+[ext_resource type="Texture2D" uid="uid://bc6abcr33mc0k" path="res://Art/Menu Art/bee racing low opacity.png" id="2_etnfi"]
 
 [node name="PauseMenu" type="Control"]
 process_mode = 2
@@ -12,6 +12,18 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_nov15")
+
+[node name="TextureRect" type="TextureRect" parent="."]
+z_index = -1
+layout_mode = 0
+offset_left = -27.0
+offset_top = -342.0
+offset_right = 2259.0
+offset_bottom = 1313.0
+scale = Vector2(1.00168, 1)
+texture = ExtResource("2_etnfi")
+expand_mode = 1
+stretch_mode = 4
 
 [node name="ColorRect" type="ColorRect" parent="."]
 layout_mode = 1
@@ -48,18 +60,6 @@ text = "Restart"
 [node name="QuitButton" type="Button" parent="VBoxContainer"]
 layout_mode = 2
 text = "Quit to Menu"
-
-[node name="TextureRect" type="TextureRect" parent="."]
-visible = false
-z_index = -1
-layout_mode = 0
-offset_left = 957.0
-offset_top = 484.0
-offset_right = 1160.0
-offset_bottom = 646.0
-texture = ExtResource("2_etnfi")
-expand_mode = 1
-stretch_mode = 4
 
 [connection signal="pressed" from="VBoxContainer/ResumeButton" to="." method="_on_resume_button_pressed"]
 [connection signal="pressed" from="VBoxContainer/RestartButton" to="." method="_on_restart_button_pressed"]

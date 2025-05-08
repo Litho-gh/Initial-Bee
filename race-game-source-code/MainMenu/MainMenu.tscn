@@ -17,46 +17,48 @@ script = ExtResource("1_4rbjt")
 
 [node name="background" type="TextureRect" parent="."]
 layout_mode = 0
-offset_left = -67.0
-offset_top = -350.0
-offset_right = 1533.0
-offset_bottom = 714.0
+offset_left = -107.0
+offset_top = -822.0
+offset_right = 2758.0
+offset_bottom = 1272.0
 texture = ExtResource("2_lbqne")
+expand_mode = 1
+stretch_mode = 4
 
 [node name="start_game_button" type="Button" parent="."]
 z_index = 5
 layout_mode = 0
-offset_left = 540.0
-offset_top = 589.0
-offset_right = 636.0
-offset_bottom = 620.0
+offset_left = 832.0
+offset_top = 906.0
+offset_right = 977.0
+offset_bottom = 964.0
 theme_override_colors/font_color = Color(1, 0.866667, 0.215686, 1)
 text = "Start Game"
 
 [node name="laps" type="LineEdit" parent="."]
 layout_mode = 0
-offset_left = 552.0
-offset_top = 519.0
-offset_right = 621.0
-offset_bottom = 550.0
+offset_left = 865.0
+offset_top = 857.0
+offset_right = 934.0
+offset_bottom = 888.0
 text = "3"
 placeholder_text = "laps"
 
 [node name="laps label" type="Label" parent="."]
 layout_mode = 0
-offset_left = 566.0
-offset_top = 475.0
-offset_right = 607.0
-offset_bottom = 500.0
+offset_left = 865.0
+offset_top = 798.0
+offset_right = 906.0
+offset_bottom = 823.0
 theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
 text = "Laps"
 
 [node name="select_levels" type="Label" parent="."]
 layout_mode = 0
-offset_left = 785.0
-offset_top = 464.0
-offset_right = 961.0
-offset_bottom = 506.0
+offset_left = 1362.0
+offset_top = 756.0
+offset_right = 1538.0
+offset_bottom = 798.0
 theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
 theme_override_font_sizes/font_size = 30
 text = "Select level"
@@ -64,20 +66,20 @@ text = "Select level"
 [node name="levels" type="ItemList" parent="."]
 z_index = 1
 layout_mode = 0
-offset_left = 713.0
-offset_top = 519.0
-offset_right = 1042.0
-offset_bottom = 615.0
+offset_left = 1285.0
+offset_top = 823.0
+offset_right = 1614.0
+offset_bottom = 948.0
 theme_override_font_sizes/font_size = 15
 
 [node name="select_bugs" type="Label" parent="."]
 z_index = 1
 z_as_relative = false
 layout_mode = 0
-offset_left = 207.0
-offset_top = 459.0
-offset_right = 387.0
-offset_bottom = 501.0
+offset_left = 353.0
+offset_top = 756.0
+offset_right = 533.0
+offset_bottom = 798.0
 theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
 theme_override_font_sizes/font_size = 30
 text = "Choose Bug"
@@ -85,18 +87,18 @@ text = "Choose Bug"
 [node name="vehicles" type="ItemList" parent="."]
 z_index = 1
 layout_mode = 0
-offset_left = 166.0
-offset_top = 522.0
-offset_right = 456.0
-offset_bottom = 620.0
+offset_left = 298.0
+offset_top = 823.0
+offset_right = 588.0
+offset_bottom = 949.0
 theme_override_font_sizes/font_size = 15
 
 [node name="Title" type="TextureRect" parent="."]
 layout_mode = 0
-offset_left = 210.0
-offset_top = 105.0
-offset_right = 1147.0
-offset_bottom = 475.0
+offset_left = 353.0
+offset_top = 238.0
+offset_right = 1461.0
+offset_bottom = 693.0
 texture = ExtResource("2_b76km")
 stretch_mode = 4
 

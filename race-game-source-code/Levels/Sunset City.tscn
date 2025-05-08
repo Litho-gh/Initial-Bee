@@ -211,7 +211,7 @@ mesh = SubResource("BoxMesh_eyb4p")
 environment = SubResource("Environment_3yhe6")
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="WorldEnvironment"]
-transform = Transform3D(-0.281522, -0.153914, 0.94713, 0.0463908, 0.983714, 0.173648, -0.958433, 0.0928239, -0.269797, 10, -23.267, 13.14)
+transform = Transform3D(-0.563915, -0.117697, 0.817402, 0.0463908, 0.983715, 0.173648, -0.824529, 0.135843, -0.549272, 10, -1218.58, 13.14)
 light_color = Color(0.972755, 0.536097, 0.195926, 1)
 light_energy = 7.027
 light_indirect_energy = 0.812
@@ -330,6 +330,7 @@ material = SubResource("StandardMaterial3D_ri8g7")
 [node name="City Side" type="Node3D" parent="."]
 
 [node name="Skyline" type="Node3D" parent="City Side"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.54114, 1.48108, -0.494507)
 
 [node name="Node3D" type="Node3D" parent="City Side/Skyline"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.80225, -0.0177002, 0.855835)

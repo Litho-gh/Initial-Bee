@@ -13,10 +13,10 @@ script = ExtResource("1_ega4w")
 self_modulate = Color(0, 0, 0, 0.501961)
 z_index = -1
 layout_mode = 0
-offset_left = 183.0
-offset_top = 75.0
-offset_right = 956.0
-offset_bottom = 583.0
+offset_left = 438.0
+offset_top = 272.0
+offset_right = 1387.0
+offset_bottom = 835.0
 theme_override_styles/panel = SubResource("StyleBoxFlat_jdoih")
 
 [node name="EventHeader" type="Panel" parent="Panel"]
@@ -98,10 +98,10 @@ grow_vertical = 2
 
 [node name="BackToMainMenuButton" type="Button" parent="."]
 layout_mode = 0
-offset_left = 762.0
-offset_top = 534.0
-offset_right = 920.0
-offset_bottom = 565.0
+offset_left = 834.0
+offset_top = 778.0
+offset_right = 992.0
+offset_bottom = 809.0
 text = "Continue"
 
 [connection signal="pressed" from="BackToMainMenuButton" to="." method="_on_back_to_main_menu_button_pressed"]
